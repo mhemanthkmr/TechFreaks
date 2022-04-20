@@ -177,6 +177,13 @@
 							</svg> <span>Climate</span>
 						</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="profile.php#">
+							<svg class="icon-sprite">
+								<use xlink:href="assets/images/icons-sprite.svg#settings" />
+							</svg> Settings
+						</a>
+					</li>
 				</ul>
 			</div>
 			<!-- Side menu END -->
