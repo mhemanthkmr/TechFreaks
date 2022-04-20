@@ -29,7 +29,6 @@ include('includes/header.php');
                 <button type="submit" class="btn btn-primary btn-block">Login</button>
               </div>
             </div>
-
           </form>
         </div>
         <div class="text-center">
