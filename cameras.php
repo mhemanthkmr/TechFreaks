@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="Jozef Dvorský - creatingo.com">
-
-  <title>SYMBIOT4 Cameras - Bootstrap 4 theme</title>
-
-  <!-- Bootstrap core CSS with custom theme variables + Additional theme styles -->
-  <link href="assets/css/iot-theme-bundle.min.css" rel="stylesheet">
-
-</head>
-
-<body>
+<?php
+$title = "Cameras";
+include('includes/header.php');
+?>
 
   <!-- Preloader -->
   <div id="iot-preloader">
@@ -179,7 +165,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="cameras.php#">
+              <a class="nav-link" href="profile.php#">
                 <svg class="icon-sprite">
                   <use xlink:href="assets/images/icons-sprite.svg#settings" />
                 </svg> Settings
