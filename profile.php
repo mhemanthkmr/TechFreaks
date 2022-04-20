@@ -189,13 +189,13 @@
                 <!-- Profile tabs START -->
                 <ul class="nav nav-tabs nav-fill" role="tablist">
                   <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="profile.php#personal" role="tab">PERSONAL</a>
+                    <a class="nav-link active" data-toggle="tab" href="#personal" role="tab">PERSONAL</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="profile.php#address" role="tab">ADDRESS</a>
+                    <a class="nav-link" data-toggle="tab" href="#address" role="tab">ADDRESS</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="profile.php#password" role="tab">PASSWORD</a>
+                    <a class="nav-link" data-toggle="tab" href="#password" role="tab">PASSWORD</a>
                   </li>
                 </ul>
                 <div class="info-holder info-ct">
