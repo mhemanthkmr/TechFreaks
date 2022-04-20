@@ -1,4 +1,6 @@
-<?php include('includes/header.php');?>
+<?php 
+$title =  "Home";
+include('includes/header.php');?>
 <!-- Preloader -->
 <div id="iot-preloader">
 	<div class="center-preloader d-flex align-items-center">
