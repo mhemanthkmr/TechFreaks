@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="Jozef Dvorský - creatingo.com">
 
-	<title><?php if(isset($title)) echo 'TechFreaks IoT - '.$title?></title>
+	<title><?php if(isset($title)) echo $title.' - TechFreaks IoT'?></title>
 
 	<!-- Bootstrap core CSS with custom theme variables + Additional theme styles -->
 	<link href="assets/css/iot-theme-bundle.min.css" rel="stylesheet">
