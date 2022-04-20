@@ -13,7 +13,7 @@ include('includes/navbar.php');?>
 		<defs>
 			<style type="text/css">
 				.glow circle {
-					fill: url(index.html)
+					fill: url(index.php)
 				}
 			</style>
 			<filter id="blur" x="-25%" y="-25%" width="150%" height="150%">

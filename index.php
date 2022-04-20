@@ -10,7 +10,7 @@
 </div>
 
 <!-- Alerts Modal -->
-<div class="modal modal-nobg centered fade" id="alertsModal" tabindex="-1" role="dialog" aria-label="Alerts"
+<!-- <div class="modal modal-nobg centered fade" id="alertsModal" tabindex="-1" role="dialog" aria-label="Alerts"
 	aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -36,7 +36,7 @@
 	<button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
 		<span aria-hidden="true">&times;</span>
 	</button>
-</div>
+</div> -->
 
 <!-- Arming Modal -->
 <div class="modal modal-warning centered fade" id="armModal" tabindex="-1" role="dialog" aria-label="Arming"
@@ -97,7 +97,7 @@
 				</div>
 			</form>
 		</div>
-		<a class="navbar-brand px-lg-3 px-1 mr-0" href="index.html#">SMART family</a>
+		<a class="navbar-brand px-lg-3 px-1 mr-0" href="index.php#">SMART family</a>
 		<div class="ml-auto">
 			<div class="navbar-nav flex-row navbar-icons">
 				<div class="nav-item">
@@ -119,9 +119,9 @@
 						</svg>
 					</button>
 					<div class="dropdown-menu dropdown-menu-right">
-						<a class="dropdown-item" href="profile.html">Profile</a>
+						<a class="dropdown-item" href="profile.php">Profile</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="login.html">Logout</a>
+						<a class="dropdown-item" href="login.php">Logout</a>
 					</div>
 				</div>
 				<div class="nav-item d-lg-none">
@@ -143,45 +143,38 @@
 			<div id="sidebar" class="sidebar-offcanvas">
 				<ul class="nav flex-column nav-sidebar">
 					<li class="nav-item active">
-						<a class="nav-link active" href="index.html">
+						<a class="nav-link active" href="index.php">
 							<svg class="icon-sprite">
 								<use xlink:href="assets/images/icons-sprite.svg#home" />
 							</svg> Home
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="lights.html">
+						<a class="nav-link" href="lights.php">
 							<svg class="icon-sprite">
 								<use xlink:href="assets/images/icons-sprite.svg#bulb-eco" />
 							</svg> Lights
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="cameras.html">
+						<a class="nav-link" href="cameras.php">
 							<svg class="icon-sprite">
 								<use xlink:href="assets/images/icons-sprite.svg#camera" />
 							</svg> Cameras
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="appliances.html">
+						<a class="nav-link" href="appliances.php">
 							<svg class="icon-sprite">
 								<use xlink:href="assets/images/icons-sprite.svg#appliances" />
 							</svg> Appliances
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="climate.html">
+						<a class="nav-link" href="climate.php">
 							<svg class="icon-sprite">
 								<use xlink:href="assets/images/icons-sprite.svg#thermometer" />
 							</svg> <span>Climate</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link disabled" href="index.html#">
-							<svg class="icon-sprite">
-								<use xlink:href="assets/images/icons-sprite.svg#settings" />
-							</svg> Settings
 						</a>
 					</li>
 				</ul>
@@ -575,7 +568,7 @@
 	<defs>
 		<style type="text/css">
 			.glow circle {
-				fill: url(index.html)
+				fill: url(index.php)
 			}
 		</style>
 		<filter id="blur" x="-25%" y="-25%" width="150%" height="150%">
@@ -588,7 +581,21 @@
 	</defs>
 </svg>
 
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
+<!-- Bootstrap bundle -->
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+<!-- Cross browser support for SVG icon sprites -->
+<script src="assets/js/svg4everybody.min.js"></script>
+
+<!-- jQuery countdown timer plugin (Exit modal, Garage doors, Washing machine) -->
+<script src="assets/js/iot-timer.min.js"></script>
+
+<!-- Basic theme functionality (arming, garage doors, switches ...) - using jQuery -->
+<script src="assets/js/iot-functions.min.js"></script>
 
 <script>
 	$(document).ready(function () {
@@ -827,4 +834,6 @@
 
 </script>
 
-<?php include('includes/footer.php'); ?>
+</body>
+
+</html>
