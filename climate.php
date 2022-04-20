@@ -98,7 +98,7 @@
           </div>
         </form>
       </div>
-      <a class="navbar-brand px-lg-3 px-1 mr-0" href="climate.php#">SMART family</a>
+      <a class="navbar-brand px-lg-3 px-1 mr-0" href="climate.php#">Tech Freaks</a>
       <div class="ml-auto">
         <div class="navbar-nav flex-row navbar-icons">
           <div class="nav-item">
@@ -120,9 +120,9 @@
               </svg>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="profile.html">Profile</a>
+              <a class="dropdown-item" href="profile.php">Profile</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="login.html">Logout</a>
+              <a class="dropdown-item" href="login.php">Logout</a>
             </div>
           </div>
           <div class="nav-item d-lg-none">
@@ -179,7 +179,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="climate.php#">
+              <a class="nav-link" href="climate.php#">
                 <svg class="icon-sprite">
                   <use xlink:href="assets/images/icons-sprite.svg#settings" />
                 </svg> Settings
