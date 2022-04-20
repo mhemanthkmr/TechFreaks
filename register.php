@@ -9,6 +9,7 @@ include('includes/header.php');
         <!-- <img src="assets/images/tE.svg" alt="SYMBIOT 4" class="mx-auto"> -->
         <!-- <h1 class="primary">TechFreaks Home Automation</h1> -->
       </div>
+      
       <div class="col-12">
         <!-- Login form START -->
         <div class="card px-4 pt-2">
