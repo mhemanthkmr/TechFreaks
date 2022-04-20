@@ -98,7 +98,7 @@
           </div>
         </form>
       </div>
-      <a class="navbar-brand px-lg-3 px-1 mr-0" href="profile.html#">SMART family</a>
+      <a class="navbar-brand px-lg-3 px-1 mr-0" href="profile.php">Tech Freaks</a>
       <div class="ml-auto">
         <div class="navbar-nav flex-row navbar-icons">
           <div class="nav-item">
@@ -120,9 +120,9 @@
               </svg>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="profile.html">Profile</a>
+              <a class="dropdown-item" href="profile.php">Profile</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="login.html">Logout</a>
+              <a class="dropdown-item" href="login.php">Logout</a>
             </div>
           </div>
           <div class="nav-item d-lg-none">
@@ -172,7 +172,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="profile.html#">
+              <a class="nav-link" href="profile.php">
                 <svg class="icon-sprite">
                   <use xlink:href="assets/images/icons-sprite.svg#settings" />
                 </svg> Settings
@@ -189,13 +189,13 @@
                 <!-- Profile tabs START -->
                 <ul class="nav nav-tabs nav-fill" role="tablist">
                   <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="profile.html#personal" role="tab">PERSONAL</a>
+                    <a class="nav-link active" data-toggle="tab" href="profile.phppersonal" role="tab">PERSONAL</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="profile.html#address" role="tab">ADDRESS</a>
+                    <a class="nav-link" data-toggle="tab" href="profile.phpaddress" role="tab">ADDRESS</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="profile.html#password" role="tab">PASSWORD</a>
+                    <a class="nav-link" data-toggle="tab" href="profile.phppassword" role="tab">PASSWORD</a>
                   </li>
                 </ul>
                 <div class="info-holder info-ct">
@@ -339,7 +339,7 @@
     <defs>
       <style type="text/css">
         .glow circle {
-          fill: url(profile.html)
+          fill: url(profile.php)
         }
       </style>
       <filter id="blur" x="-25%" y="-25%" width="150%" height="150%">
