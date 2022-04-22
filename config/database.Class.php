@@ -1,26 +1,16 @@
 <?php
-define('DB_HOST', 'localhost');
-define('DB_USER', 'mhemanthkmr');
-define('DB_PASSWORD', 'hemanth123');
-define('DB_DATABASE', 'TechFreaks');
-define('SITE_URL', 'http://localhost/TechFreaks/');
-include_once('../controllers/SessionController.php');
-include_once('database.Class.php');
-$db = new DatabaseConnection;
-// $conn = $db->conn;
-function baseurl($slug)
+class DatabaseConnection
 {
-    echo SITE_URL.$slug;
-}
-// baseurl('index.php');
-function validateInput($dbcon,$input)
-{
-    return mysqli_real_escape_string($dbcon, $input);
-}
-function redirect($name,$msg,$page,$value)
-{
-    $_SESSION[$name] = $msg;
-    SessionController::msg('flag', $value);
-    SessionController::head(baseurl($page));
+    public function __construct()
+    {
+        $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
+        // die(print_r($conn));
+        if($conn->connect_error)
+        {
+            die("<h1>Database Connection Failed</h1>");
+        }
+        // echo "Data Base Connected Successfully";
+        return $this->conn = $conn;
+    }
 }
 ?>
