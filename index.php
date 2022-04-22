@@ -590,9 +590,16 @@ include('includes/header.php');?>
 	</defs>
 </svg>
 
+
+
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
 	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<!-- HOMEJS -->
+
+<script src="home.js"></script>
+
 
 <!-- Bootstrap bundle -->
 <script src="assets/js/bootstrap.bundle.min.js"></script>
