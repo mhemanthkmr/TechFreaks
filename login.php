@@ -12,22 +12,22 @@ include('includes/header.php');
         <!-- Login form START -->
         <?php include('message.php');?>
         <div class="card px-4 pt-2">
-          <form action="code.php" method="POST" class="p-2">
+          <form action="logincode.php" method="POST" class="p-2">
             <div class="form-group row">
               <label for="user-name" class="col-12 col-form-label">Username</label>
               <div class="col-12">
-                <input class="form-control custom-focus" name="username" type="text" value="" id="user-name">
+                <input class="form-control custom-focus" name="username" type="text" value="" id="user-name" required>
               </div>
             </div>
             <div class="form-group row">
               <label for="user-password" class="col-12 col-form-label">Password</label>
               <div class="col-12">
-                <input class="form-control custom-focus" name="password" type="password" value="" id="user-password">
+                <input class="form-control custom-focus" name="password" type="password" value="" id="user-password" required>
               </div>
             </div>
             <div class="form-group row">
               <div class="col-12 mt-3 mb-2 text-center">
-                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                <button type="submit" name= "login_btn" class="btn btn-primary btn-block">Login</button>
               </div>
             </div>
           </form>
