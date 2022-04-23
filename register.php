@@ -12,6 +12,7 @@ include('includes/header.php');
       
       <div class="col-12">
         <!-- Login form START -->
+        <?php include('message.php');?>
         <div class="card px-4 pt-2">
           <form action="code.php" method="POST" class="p-2">
           <div class="form-group row">
