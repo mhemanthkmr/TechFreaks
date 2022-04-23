@@ -116,6 +116,34 @@ $(document).ready(function () {
         }
     });
 
+    $("#switch-light-5").click(function () {
+        if (!$(this).is(':checked')) {
+
+            button = 4;
+            console.log(button);
+            box = 1;
+            console.log(box);
+            $.ajax({
+                type: "POST",
+                url: "firebasecode.php",
+                data: {
+                    'light_off': true,
+                    'light': 5
+                }
+            });
+        }
+        else {
+            $.ajax({
+                type: "POST",
+                url: "firebasecode.php",
+                data: {
+                    'light_on': true,
+                    'light': 5
+                }
+            });
+        }
+    });
+
     $(".click").click(function () {
         if (box == 1) {
             $.ajax({
