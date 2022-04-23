@@ -6,7 +6,8 @@ define('DB_DATABASE', 'TechFreaks');
 define('SITE_URL', 'http://localhost/TechFreaks/');
 include_once('database.Class.php');
 $db = new DatabaseConnection;
-// $conn = $db->conn;
+$con = $db->conn;
+// $con = mysqli_connect("localhost","mhemanthkmr","hemanth123","TechFreaks");
 function baseurl($slug)
 {
     echo SITE_URL.$slug;
@@ -16,4 +17,5 @@ function validateInput($dbcon,$input)
 {
     return mysqli_real_escape_string($dbcon, $input);
 }
+
 ?>
