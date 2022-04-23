@@ -18,25 +18,25 @@ include('includes/header.php');
           <div class="form-group row">
               <label for="user-name" class="col-12 col-form-label">Name</label>
               <div class="col-12">
-                <input class="form-control custom-focus" name="name" type="text" value="" id="user-name">
+                <input class="form-control custom-focus" name="name" type="text" value="" id="user-name" required>
               </div>
             </div>
             <div class="form-group row">
               <label for="user-name" class="col-12 col-form-label">Username</label>
               <div class="col-12">
-                <input class="form-control custom-focus" name="username" type="text" value="" id="user-name">
+                <input class="form-control custom-focus" name="username" type="text" value="" id="user-name" required>
               </div>
             </div>
             <div class="form-group row">
               <label for="user-name" class="col-12 col-form-label">Email</label>
               <div class="col-12">
-                <input class="form-control custom-focus" name="email" type="email" value="" id="user-name">
+                <input class="form-control custom-focus" name="email" type="email" value="" id="user-name" required>
               </div>
             </div>
             <div class="form-group row">
               <label for="user-password" class="col-12 col-form-label">Password</label>
               <div class="col-12">
-                <input class="form-control custom-focus" name="password" type="password" value="" id="user-password">
+                <input class="form-control custom-focus" name="password" type="password" value="" id="user-password" required>
               </div>
             </div>
             <div class="form-group row">
