@@ -1,4 +1,5 @@
 <?php 
+include('auth.php');
 $title =  "Home";
 include('includes/header.php');?>
 <!-- Preloader -->
