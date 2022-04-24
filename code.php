@@ -56,10 +56,14 @@ if(isset($_POST['register_btn'])){
         $_SESSION['message'] = "All Fields are Mandatory";
         header("Location: register.php");
     }
- }
-if(isset($_POST['login_btn']))
-{
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+}
+if(isset($_POST['logout_btn'])) {
+    unset($_SESSION['authenticated']);
+    unset($_SESSION['auth_user']);
+
+    $_SESSION['flag'] = 1;
+    $_SESSION['message'] = "Logged out Successfully";
+    header("Location: login.php");
+    exit(0);
 }
 ?>
