@@ -1,4 +1,11 @@
 <?php 
+session_start();
+if (isset($_SESSION['authenticated'])) {
+  $_SESSION['flag'] = 2;
+  $_SESSION['message'] = "You are aldready logged in";
+  header("Location: index.php");
+  exit(0);
+}
 $title = "Register";
 include('includes/header.php');
 ?>
