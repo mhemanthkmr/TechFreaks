@@ -541,9 +541,9 @@ include('includes/header.php');?>
 						</div>
 					</div>
 					<br><br>
-					<div class="row">
+					<!-- <div class="row">
 						<div class="col-sm-12">
-							<!-- Demonstration - buttons -->
+							Demonstration - buttons
 							<button type="button" class="btn btn-primary my-2">PRIMARY</button>
 							<button type="button" class="btn btn-secondary my-2">SECONDARY</button>
 							<button type="button" class="btn btn-lg btn-danger mx-2 my-2" data-toggle="modal"
@@ -552,7 +552,7 @@ include('includes/header.php');?>
 							<button type="button" class="btn btn-success my-2">SUCCESS</button>
 							<button type="button" class="btn btn-info my-2">INFO</button>
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<!-- Main content overlay when side menu appears  -->
 				<div class="cover-offcanvas" data-toggle="offcanvas"></div>
