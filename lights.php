@@ -108,7 +108,9 @@ include('includes/header.php');
             <div class="dropdown-menu dropdown-menu-right">
               <a class="dropdown-item" href="profile.php">Profile</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="login.php">Logout</a>
+              <form action="code.php" method="post">
+							<button type="submit" name="logout_btn" class="dropdown-item" href="login.php">Logout</button>
+						</form>
             </div>
           </div>
           <div class="nav-item d-lg-none">
@@ -676,6 +678,8 @@ include('includes/header.php');
   <!-- Chartist.js pugin - Legend -->
   <script src="assets/js/chartist-legend.min.js"></script>
 
+  <script src="home.js"></script>
+
   <script>
     $(document).ready(function() {
 
@@ -797,6 +801,32 @@ include('includes/header.php');
         var action = $(this).data('action');
 
         iot.switchGroup(target, action);
+
+        if (action == 'all-on') {
+          button = 4;
+          console.log(button);
+          box = 1;
+          console.log(box);
+          $.ajax({
+            type: "POST",
+            url: "firebasecode.php",
+            data: {
+              'light_all_on': true,
+            }
+          });
+			  }
+
+			if (action == 'all-off') {
+				button = 2;
+				console.log(button);
+				$.ajax({
+					type: "POST",
+					url: "firebasecode.php",
+					data: {
+						'light_all_off': true,
+					}
+				});
+			  }
       });
 
       // Reposition to center when a modal is shown

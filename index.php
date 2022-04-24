@@ -124,7 +124,9 @@ include('includes/header.php');?>
 					<div class="dropdown-menu dropdown-menu-right">
 						<a class="dropdown-item" href="profile.php">Profile</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="login.php">Logout</a>
+						<form action="code.php" method="post">
+							<button type="submit" name="logout_btn" class="dropdown-item" href="login.php">Logout</button>
+						</form>
 					</div>
 				</div>
 				<div class="nav-item d-lg-none">
@@ -332,11 +334,11 @@ include('includes/header.php');?>
 									</li>
 								</ul>
 								<div class="card-body">
-									<div class="lights-controls" data-controls="switch-lights">
+									<div class="lights-controls text-center"  data-controls="switch-lights">
 										<button data-action="all-on" type="button"
-											class="btn btn-primary lights-control" id="lights-on-all">All <strong>ON</strong></button>
+											class="btn btn-success lights-control mr-5" id="lights-on-all">All <strong>ON</strong></button>
 										<button data-action="all-off" type="button"
-											class="btn btn-secondary lights-control" id="lights-off-all">All
+											class="btn btn-danger lights-control" id="lights-off-all">All
 											<strong>OFF</strong></button>
 									</div>
 								</div>
