@@ -110,7 +110,9 @@ include('includes/header.php');
             <div class="dropdown-menu dropdown-menu-right">
               <a class="dropdown-item" href="profile.php">Profile</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="login.php">Logout</a>
+              <form action="code.php" method="post">
+							<button type="submit" name="logout_btn" class="dropdown-item" href="login.php">Logout</button>
+						</form>
             </div>
           </div>
           <div class="nav-item d-lg-none">
