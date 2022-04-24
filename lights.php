@@ -1,4 +1,5 @@
 <?php 
+include('auth.php');
 $title = "Lights";
 include('includes/header.php');
 ?>

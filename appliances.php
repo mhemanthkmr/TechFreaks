@@ -1,5 +1,5 @@
 <?php
-
+include('auth.php');
 $title = "Appliances";
 include("includes/header.php");
 ?>

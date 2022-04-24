@@ -1,4 +1,5 @@
 <?php 
+include('auth.php');
 $title = "Climate";
 include('includes/header.php');
 ?>
