@@ -2,6 +2,7 @@
 include('auth.php');
 $title = "Profile";
 include('includes/header.php');
+include('config/app.php');
 
 ?>
 
@@ -175,6 +176,11 @@ include('includes/header.php');
         <div id="main">
           <div class="container-fluid">
             <div class="row">
+              <div class="col-sm-12">
+                <?php include('message.php'); ?>
+              </div>
+            </div>
+            <div class="row">
               <div class="col-12 col-sm-10 offset-sm-1">
                 <!-- Profile tabs START -->
                 <ul class="nav nav-tabs nav-fill" role="tablist">
@@ -196,38 +202,55 @@ include('includes/header.php');
                 <div class="tab-content px-4 px-sm-0 py-sm-4 mt-4">
                   <!-- Personal pane START -->
                   <div class="tab-pane fade show active" id="personal" role="tabpanel">
-                    <form>
-                      <div class="form-group row">
-                        <label for="first-name" class="col-12 col-sm-3 col-form-label">First name</label>
-                        <div class="col-12 col-sm-9">
-                          <input class="form-control custom-focus" type="text" value="Joe" id="first-name">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="last-name" class="col-12 col-sm-3 col-form-label">Last name</label>
-                        <div class="col-12 col-sm-9">
-                          <input class="form-control custom-focus" type="text" value="Doe" id="last-name">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="user-email" class="col-12 col-sm-3 col-form-label">Email</label>
-                        <div class="col-12 col-sm-9">
-                          <input class="form-control custom-focus" type="email" value="info@creatingo.com"
-                            id="user-email">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="user-tel" class="col-12 col-sm-3 col-form-label">Phone</label>
-                        <div class="col-12 col-sm-9">
-                          <input class="form-control custom-focus" type="tel" value="1-(555)-555-5555" id="user-tel">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="offset-xs-0 offset-sm-3 col-12 col-sm-9 mt-3">
-                          <button type="submit" class="btn btn-primary">Save</button>
-                        </div>
-                      </div>
-                    </form>
+                  <?php
+                    if(isset($_SESSION['auth_user']['id'])) 
+                    {
+                      $user_id = $_SESSION['auth_user']['id'];
+                      $users = "SELECT * FROM `users` WHERE id='$user_id'";
+                      // die($users);
+                      $users_run = mysqli_query($con,$users);
+                      if(mysqli_num_rows($users_run) > 0)
+                      { 
+                          foreach($users_run as $user)
+                          // die(print_r($user));
+                          {  ?>
+                            <form action="code.php" method="post"> 
+                              <input type="hidden" name="id" value="<?=$user_id?>">
+                              <div class="form-group row">
+                                <label for="first-name" class="col-12 col-sm-3 col-form-label">Name</label>
+                                <div class="col-12 col-sm-9">
+                                  <input class="form-control custom-focus" name="name" type="text" value="<?=$user['name']?>" id="first-name">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="user-email" class="col-12 col-sm-3 col-form-label">Email</label>
+                                <div class="col-12 col-sm-9">
+                                  <input class="form-control custom-focus" name="email" type="email" value="<?=$user['email']?>"
+                                    id="user-email">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="user-email" class="col-12 col-sm-3 col-form-label">Phone</label>
+                                <div class="col-12 col-sm-9">
+                                  <input class="form-control custom-focus" name="phone" type="text" value="<?=$user['phone']?>"
+                                    id="user-phone">
+                                </div>
+                              </div>
+                              <!-- <div class="form-group row">
+                                <label for="user-tel" class="col-12 col-sm-3 col-form-label">Phone</label>
+                                <div class="col-12 col-sm-9">
+                                  <input class="form-control custom-focus" type="tel" name="phone" value="" id="user-tel">
+                                </div>
+                              </div> -->
+                              <div class="form-group row">
+                                <div class="offset-xs-0 offset-sm-3 col-12 col-sm-9 mt-3">
+                                  <button type="submit" name="profile_save_bio" class="btn btn-success">Save</button>
+                                </div>
+                              </div>
+                            </form> <?php
+                          }
+                        }
+                      } ?>
                   </div>
                   <!-- Personal pane END -->
                   <!-- Address pane START -->
