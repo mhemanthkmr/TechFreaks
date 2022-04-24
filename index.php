@@ -195,10 +195,7 @@ include('includes/header.php');?>
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-sm-12">
-							<div class="card p-2 mb-4">
-								<img src="assets/images/symbiot4.svg" width="140" height="20" alt="SYMBIOT 4"
-									class="mx-auto">
-							</div>
+							<?php include('message.php'); ?>
 						</div>
 					</div>
 					<div class="row">
@@ -337,9 +334,9 @@ include('includes/header.php');?>
 								<div class="card-body">
 									<div class="lights-controls" data-controls="switch-lights">
 										<button data-action="all-on" type="button"
-											class="btn btn-primary lights-control">All <strong>ON</strong></button>
+											class="btn btn-primary lights-control" id="lights-on-all">All <strong>ON</strong></button>
 										<button data-action="all-off" type="button"
-											class="btn btn-secondary lights-control">All
+											class="btn btn-secondary lights-control" id="lights-off-all">All
 											<strong>OFF</strong></button>
 									</div>
 								</div>
@@ -730,6 +727,32 @@ include('includes/header.php');?>
 			var action = $(this).data('action');
 
 			iot.switchGroup(target, action);
+
+			if (action == 'all-on') {
+				button = 4;
+				console.log(button);
+				box = 1;
+				console.log(box);
+				$.ajax({
+					type: "POST",
+					url: "firebasecode.php",
+					data: {
+						'light_all_on': true,
+					}
+				});
+			}
+
+			if (action == 'all-off') {
+				button = 2;
+				console.log(button);
+				$.ajax({
+					type: "POST",
+					url: "firebasecode.php",
+					data: {
+						'light_all_off': true,
+					}
+				});
+			}
 		});
 
 		// Reposition to center when a modal is shown
