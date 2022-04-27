@@ -189,10 +189,10 @@ include('includes/header.php');
                   </div>
                   <hr class="my-0">
                   <div class="card-body">
-                    <div class="lights-controls" data-controls="switch-lights-in">
-                      <button data-action="all-on" type="button" class="btn btn-primary lights-control">All
+                    <div class="lights-controls text-center" data-controls="switch-lights-in">
+                      <button data-action="all-on" type="button" class="btn btn-success mr-5 lights-control">All
                         <strong>ON</strong></button>
-                      <button data-action="all-off" type="button" class="btn btn-secondary lights-control">All
+                      <button data-action="all-off" type="button" class="btn btn-danger lights-control">All
                         <strong>OFF</strong></button>
                     </div>
                   </div>
@@ -475,10 +475,10 @@ include('includes/header.php');
                   </div>
                   <hr class="my-0">
                   <div class="card-body">
-                    <div class="lights-controls" data-controls="switch-lights-ex">
-                      <button data-action="all-on" type="button" class="btn btn-primary lights-control">All
+                    <div class="lights-controls text-center" data-controls="switch-lights-ex">
+                      <button data-action="all-on" type="button" class="btn btn-success mr-5 lights-control">All
                         <strong>ON</strong></button>
-                      <button data-action="all-off" type="button" class="btn btn-secondary lights-control">All
+                      <button data-action="all-off" type="button" class="btn btn-danger lights-control">All
                         <strong>OFF</strong></button>
                     </div>
                   </div>
