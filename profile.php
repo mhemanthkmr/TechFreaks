@@ -187,9 +187,9 @@ include('config/app.php');
                   <li class="nav-item">
                     <a class="nav-link active" data-toggle="tab" href="#personal" role="tab">PERSONAL</a>
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#address" role="tab">ADDRESS</a>
-                  </li>
+                  </li> -->
                   <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#password" role="tab">PASSWORD</a>
                   </li>
@@ -254,7 +254,7 @@ include('config/app.php');
                   </div>
                   <!-- Personal pane END -->
                   <!-- Address pane START -->
-                  <div class="tab-pane fade" id="address" role="tabpanel">
+                  <!-- <div class="tab-pane fade" id="address" role="tabpanel">
                     <form>
                       <div class="form-group row">
                         <label for="street" class="col-12 col-sm-3 col-form-label">Street</label>
@@ -297,12 +297,13 @@ include('config/app.php');
                         </div>
                       </div>
                     </form>
-                  </div>
+                  </div> -->
                   <!-- Address pane END -->
                   <!-- Password pane START -->
                   <div class="tab-pane fade" id="password" role="tabpanel">
-                    <form action="code.php" action="post">
+                    <form action="code.php" method="POST">
                     <div class="form-group row">
+                        <input type="hidden" value="<?=$user_id?>" name="id">
                         <label for="user-password" class="col-12 col-sm-3 col-form-label">Current Password</label>
                         <div class="col-12 col-sm-9">
                           <input class="form-control custom-focus" name="current_password" type="password" id="user-password">
@@ -324,7 +325,7 @@ include('config/app.php');
                       </div>
                       <div class="form-group row">
                         <div class="offset-xs-0 text-center offset-sm-3 col-12 col-sm-9 mt-3">
-                          <button type="submit" name="profile_save_password" class="btn btn-success">Save</button>
+                          <button type="submit" name="profile_save_password" class="btn btn-success">Save Password</button>
                         </div>
                       </div>
                     </form>
