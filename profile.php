@@ -222,7 +222,7 @@ include('config/app.php');
                                   <input class="form-control custom-focus" name="name" type="text" value="<?=$user['name']?>" id="first-name">
                                 </div>
                               </div>
-                              <div class="form-group row">
+                              <div class="form-group disabled row">
                                 <label for="user-email" class="col-12 col-sm-3 col-form-label">Email</label>
                                 <div class="col-12 col-sm-9">
                                   <input class="form-control custom-focus" name="email" type="email" value="<?=$user['email']?>"
@@ -301,24 +301,30 @@ include('config/app.php');
                   <!-- Address pane END -->
                   <!-- Password pane START -->
                   <div class="tab-pane fade" id="password" role="tabpanel">
-                    <form>
+                    <form action="code.php" action="post">
+                    <div class="form-group row">
+                        <label for="user-password" class="col-12 col-sm-3 col-form-label">Current Password</label>
+                        <div class="col-12 col-sm-9">
+                          <input class="form-control custom-focus" name="current_password" type="password" id="user-password">
+                        </div>
+                      </div>
                       <div class="form-group row">
                         <label for="user-password" class="col-12 col-sm-3 col-form-label">Password</label>
                         <div class="col-12 col-sm-9">
-                          <input class="form-control custom-focus" type="password" value="professor" id="user-password">
+                          <input class="form-control custom-focus" name="password" type="password" id="user-password">
                         </div>
                       </div>
                       <div class="form-group row has-success">
                         <label for="user-password-confirm" class="col-12 col-sm-3 col-form-label">Confirm
                           password</label>
                         <div class="col-12 col-sm-9">
-                          <input class="form-control custom-focus is-valid" type="password" value="professor"
-                            id="user-password-confirm">
+                          <input class="form-control custom-focus" name="cpassword" type="password"
+                            id="">
                         </div>
                       </div>
                       <div class="form-group row">
-                        <div class="offset-xs-0 offset-sm-3 col-12 col-sm-9 mt-3">
-                          <button type="submit" class="btn btn-primary">Save password</button>
+                        <div class="offset-xs-0 text-center offset-sm-3 col-12 col-sm-9 mt-3">
+                          <button type="submit" name="profile_save_password" class="btn btn-success">Save</button>
                         </div>
                       </div>
                     </form>

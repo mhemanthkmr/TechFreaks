@@ -34,6 +34,7 @@ if(isset($_POST['register_btn'])){
             else 
             {
                 $query = "INSERT INTO `TechFreaks`.`users` (`name`, `username`, `email`, `password`, `ver_token`) VALUES ('$name', '$username', '$email', '$password', '$verify_token');";
+                // die($query);
                 $query_run = mysqli_query($con,$query);
                 if($query_run)
                 {
@@ -44,7 +45,7 @@ if(isset($_POST['register_btn'])){
                 else 
                 {
                     $_SESSION['message'] = "Registration Failed";
-                    $_SESSION['flag'] = 1;
+                    $_SESSION['flag'] = 2;
                     header("Location: register.php");
                 }
             }
@@ -73,7 +74,7 @@ if(isset($_POST['profile_save_bio']))
         $update_profile = "UPDATE `TechFreaks`.`users` SET `name` = '$name', `email` = '$email', `phone` = '+91$phone' WHERE (`id` = '$id');";
         // die(print_r($update_profile));
         $update_profile_run = mysqli_query($con , $update_profile);
-        
+        // die($update_profile_run);
         if($update_profile_run)
         {
             $_SESSION['flag'] = 1;
