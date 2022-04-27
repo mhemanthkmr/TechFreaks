@@ -95,6 +95,79 @@ if(isset($_POST['profile_save_bio']))
         header("Location: profile.php");
     }
 }
+
+if(isset($_POST['profile_save_password'])) 
+{
+    if(!empty(trim($_POST['current_password'])) && !empty(trim($_POST['password'])) && !empty(trim($_POST['cpassword'])))
+    {
+        $current_password = mysqli_real_escape_string($con,$_POST['current_password']);
+        $password = mysqli_real_escape_string($con,$_POST['password']);
+        $cpassword = mysqli_real_escape_string($con,$_POST['cpassword']);
+        $id = $_POST['id'];
+
+        // die(print_r($_POST));
+        $login_query = "SELECT * FROM users WHERE id = $id LIMIT 1";
+        $login_query_run = mysqli_query($con,$login_query);
+
+        if(mysqli_num_rows($login_query_run) == 1)
+        {
+            $row = mysqli_fetch_array($login_query_run);
+            // echo $row['verify_status'];
+            if (password_verify($current_password, $row['password']))
+            {
+                if($password == $cpassword)
+                {
+                    $options = [
+                        'cost' => 9,
+                    ];
+                    $hashed_password = password_hash($password, PASSWORD_BCRYPT, $options);
+                    $query = "UPDATE `TechFreaks`.`users` SET `password` = '$hashed_password' WHERE (`id` = '$id');";
+                    $update_profile_run = mysqli_query($con , $query);
+                    if($update_profile_run)
+                    {
+                        $_SESSION['flag'] = 1;
+                        $_SESSION['message'] = "Successfully Updated";
+                        header("Location: profile.php");
+                    }
+                    else
+                    {
+                        $_SESSION['flag'] = 2;
+                        $_SESSION['message'] = "Something Wrong";
+                        header("Location: profile.php");
+                    }
+                }
+                else 
+                {
+                    $_SESSION['message'] = "Password Not Match";
+                    $_SESSION['flag'] = 2;
+                    header("Location:profile.php#password");
+                    exit(0);
+                }
+            }
+            else 
+            {
+                $_SESSION['message'] = "Invalid Password";
+                $_SESSION['flag'] = 2;
+                header("Location:profile.php#password");
+                exit(0);
+            }
+        }
+        else 
+        {
+            $_SESSION['message'] = "Invalid Password";
+            $_SESSION['flag'] = 2;
+            header("Location:profile.php#password");
+            exit(0);
+        }
+    }
+    else 
+    {
+        $_SESSION['message'] = "All Fields are Mandatory";
+        $_SESSION['flag'] = 2;
+        header("Location:profile.php");
+        exit(0);
+    }
+}
 if(isset($_POST['logout_btn'])) {
     unset($_SESSION['authenticated']);
     unset($_SESSION['auth_user']);
