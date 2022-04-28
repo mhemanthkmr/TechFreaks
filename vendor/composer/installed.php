@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'abd54995e6dca211acabd73de15499a5657b5168',
+    'reference' => 'f0f0e78a9fd2759cd13bac6379f2de1483ddbb74',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'abd54995e6dca211acabd73de15499a5657b5168',
+      'reference' => 'f0f0e78a9fd2759cd13bac6379f2de1483ddbb74',
     ),
     'beste/clock' => 
     array (
@@ -173,6 +173,15 @@
       ),
       'reference' => '9b87907a81b87bc76d19a7fb2d61e61486ee9edb',
     ),
+    'phpmailer/phpmailer' => 
+    array (
+      'pretty_version' => 'v6.6.0',
+      'version' => '6.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e43bac82edc26ca04b36143a48bde1c051cfd5b1',
+    ),
     'psr/cache' => 
     array (
       'pretty_version' => '1.0.1',
@@ -279,6 +288,40 @@
       array (
       ),
       'reference' => '2a874863c48d643b9e2e254ab288ec203060a0b8',
+    ),
+    'sendgrid/php-http-client' => 
+    array (
+      'pretty_version' => '3.14.4',
+      'version' => '3.14.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6d589564522be290c7d7c18e51bcd8b03aeaf0b6',
+    ),
+    'sendgrid/sendgrid' => 
+    array (
+      'pretty_version' => '7.11.5',
+      'version' => '7.11.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '1d2fd3b72687fe82264853a8888b014f8f99e81f',
+    ),
+    'sendgrid/sendgrid-php' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '*',
+      ),
+    ),
+    'starkbank/ecdsa' => 
+    array (
+      'pretty_version' => '0.0.5',
+      'version' => '0.0.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '484bedac47bac4012dc73df91da221f0a66845cb',
     ),
     'symfony/deprecation-contracts' => 
     array (

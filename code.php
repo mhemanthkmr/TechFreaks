@@ -1,6 +1,36 @@
 <?php
 session_start();
 include('config/app.php');
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+function sendemail_verify($name,$email,$verify_token)
+{
+    $mail = new PHPMailer(true);
+    //$mail->SMTPDebug = 2;									
+	$mail->isSMTP();											
+	$mail->Host	 = 'smtp.gmail.com;';					
+	$mail->SMTPAuth = true;							
+	$mail->Username = 'hemanth.techfreaks@gmail.com';				
+	$mail->Password = 'Hemanth123$';						
+	$mail->SMTPSecure = 'tls';							
+	$mail->Port	 = 587;
+
+	$mail->setFrom('hemanth.techfreaks@gmail.com', $name);		
+	$mail->addAddress($email);
+    $mail->isHTML(true);	
+
+	$mail->Subject = 'Email Verification from Hemanth Info Tech';
+    $email_template = "<h2>You have Register with the Hemanth Info Tech</h2>
+         <h5>Verify Your email to login with the below given link</h5>
+         <br/><br/>
+         <a href='http://localhost/Login%20Register%20Email%20Verification/verify-email.php?token=$verify_token'>Click Me</a>";
+
+    $mail->Body    = $email_template;
+	//$mail->AltBody = 'Body in plain text for non-HTML mail clients';
+	$mail->send();
+	//echo "Mail has been sent successfully!";
+}
+
 if(isset($_POST['register_btn'])){
     if(!empty(trim($_POST['username'])) && !empty(trim($_POST['password']))&&!empty(trim($_POST['email'])) && !empty(trim($_POST['name'])))
     {
@@ -33,6 +63,7 @@ if(isset($_POST['register_btn'])){
             }
             else 
             {
+                sendemail_verify($name, $email, $verify_token);
                 $query = "INSERT INTO `TechFreaks`.`users` (`name`, `username`, `email`, `password`, `ver_token`) VALUES ('$name', '$username', '$email', '$password', '$verify_token');";
                 // die($query);
                 $query_run = mysqli_query($con,$query);
