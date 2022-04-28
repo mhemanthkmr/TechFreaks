@@ -2,10 +2,16 @@
 session_start();
 include('config/app.php');
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+
+//Load Composer's autoloader
+
+require 'vendor/autoload.php';
+$mail = new PHPMailer();
 function sendemail_verify($name,$email,$verify_token)
 {
-    $mail = new PHPMailer(true);
+    $mail = new PHPMailer();
     //$mail->SMTPDebug = 2;									
 	$mail->isSMTP();											
 	$mail->Host	 = 'smtp.gmail.com;';					
@@ -19,13 +25,13 @@ function sendemail_verify($name,$email,$verify_token)
 	$mail->addAddress($email);
     $mail->isHTML(true);	
 
-	$mail->Subject = 'Email Verification from Hemanth Info Tech';
-    $email_template = "<h2>You have Register with the Hemanth Info Tech</h2>
+	$mail->Subject = 'Email Verification from TechFreaks';
+    $email_template = "<h2>You have Register with the TechFreaks</h2>
          <h5>Verify Your email to login with the below given link</h5>
          <br/><br/>
-         <a href='http://localhost/Login%20Register%20Email%20Verification/verify-email.php?token=$verify_token'>Click Me</a>";
+         <a href='http://localhost/TechFreaks/verifyemail.php?token=$verify_token'>Click Me</a>";
 
-    $mail->Body    = $email_template;
+    $mail->Body = $email_template;
 	//$mail->AltBody = 'Body in plain text for non-HTML mail clients';
 	$mail->send();
 	//echo "Mail has been sent successfully!";
