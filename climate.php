@@ -409,6 +409,8 @@ include('includes/header.php');
   <!-- Chartist.js library - NO jQuery dependency -->
   <script src="assets/js/chartist.min.js"></script>
 
+  <script src="climate.js"></script>
+
   <script>
     $(document).ready(function() {
 
