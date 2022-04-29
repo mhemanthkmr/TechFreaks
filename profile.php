@@ -163,6 +163,13 @@ include('config/app.php');
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="climate.php">
+                <svg class="icon-sprite">
+                  <use xlink:href="assets/images/icons-sprite.svg#thermometer" />
+                </svg> <span>Climate</span>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="profile.php">
                 <svg class="icon-sprite">
                   <use xlink:href="assets/images/icons-sprite.svg#settings" />
