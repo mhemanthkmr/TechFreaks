@@ -8,7 +8,33 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 
 require 'vendor/autoload.php';
-$mail = new PHPMailer();
+function sendemail_otp_verify($name,$email,$verify_token)
+{
+    $mail = new PHPMailer();
+    //$mail->SMTPDebug = 2;									
+	$mail->isSMTP();											
+	$mail->Host	 = 'smtp.gmail.com;';					
+	$mail->SMTPAuth = true;							
+	$mail->Username = 'hemanth.techfreaks@gmail.com';				
+	$mail->Password = 'Hemanth123$';						
+	$mail->SMTPSecure = 'tls';							
+	$mail->Port	 = 587;
+
+	$mail->setFrom('hemanth.techfreaks@gmail.com', $name);		
+	$mail->addAddress($email);
+    $mail->isHTML(true);	
+
+	$mail->Subject = 'Email Verification from TechFreaks';
+    $email_template = "<h2>You have Changing the Password TechFreaks</h2>
+         <h5>Your OTP IS</h5>
+         <br/><br/>
+         <h1>$verify_token</h1>
+         ";
+    $mail->Body = $email_template;
+	//$mail->AltBody = 'Body in plain text for non-HTML mail clients';
+	$mail->send();
+	//echo "Mail has been sent successfully!";
+}
 function sendemail_verify($name,$email,$verify_token)
 {
     $mail = new PHPMailer();
@@ -202,6 +228,118 @@ if(isset($_POST['profile_save_password']))
         $_SESSION['message'] = "All Fields are Mandatory";
         $_SESSION['flag'] = 2;
         header("Location:profile.php");
+        exit(0);
+    }
+}
+
+if(isset($_POST['forget_btn'])) 
+{
+    if(!empty(trim($_POST['password'])) && !empty(trim($_POST['cpassword'])) && !empty(trim($_POST['email'])))
+    {
+        $email = mysqli_real_escape_string($con,$_POST['email']);
+        $password = mysqli_real_escape_string($con,$_POST['password']);
+        $cpassword = mysqli_real_escape_string($con,$_POST['cpassword']);
+
+        if($password == $cpassword)
+        {
+            $email_query = "SELECT * FROM users WHERE email = '$email' LIMIT 1;";
+            $email_query_run = mysqli_query($con,$email_query);
+            // die($email_query);
+            if (mysqli_num_rows($email_query_run) == 1) 
+            {
+                $row = mysqli_fetch_array($email_query_run);
+                $otp = rand(100000, 999999);
+                sendemail_otp_verify($row['name'], $row['email'], $otp);
+                $options = [
+                    'cost' => 9,
+                ];
+                $hashed_password = password_hash($password, PASSWORD_BCRYPT, $options);
+                $_SESSION['password'] = $hashed_password;
+                $_SESSION['email'] = $email;
+                $_SESSION['otp'] = $otp;
+                $_SESSION['message'] = "Verify OTP !";
+                $_SESSION['flag'] = 1;
+                header("Location:otp_verify.php");
+                exit(0);
+            }
+            
+            else
+            {
+                $_SESSION['message'] = "User does not exist";
+                $_SESSION['flag'] = 2;
+                header("Location:forget_password.php");
+                exit(0);
+            }
+        }
+        else
+        {
+            $_SESSION['message'] = "Password and Cofirm Password Not Match";
+            $_SESSION['flag'] = 2;
+            header("Location:forget_password.php");
+            exit(0);
+        }
+
+    }
+    else
+    {
+        $_SESSION['message'] = "All Fields are Mandatory";
+        $_SESSION['flag'] = 2;
+        header("Location:forget_password.php");
+        exit(0);
+    }
+}
+
+if(isset($_POST['verify_otp']))
+{
+    if(!empty(trim($_POST['otp'])))
+    {
+        $otp = $_POST['otp'];
+        $orginal_otp = $_SESSION['otp'];
+        if($otp == $orginal_otp)
+        {
+            $password = $_SESSION['password'];
+            $email = $_SESSION['email'];
+            // die("$password.$email");
+            $query = "UPDATE `TechFreaks`.`users` SET `password` = '$password' WHERE (`email` = '$email');";
+            $update_profile_run = mysqli_query($con , $query);
+            if($update_profile_run)
+            {
+                $_SESSION['flag'] = 1;
+                $_SESSION['message'] = "Successfully Updated";
+                unset($_SESSION['password']);
+                unset($_SESSION['email']);
+                unset($_SESSION['otp']);
+                header("Location: login.php");
+            }
+            else
+            {
+                $_SESSION['flag'] = 2;
+                unset($_SESSION['password']);
+                unset($_SESSION['email']);
+                unset($_SESSION['otp']);
+                $_SESSION['message'] = "Something Wrong";
+                header("Location: login.php");
+            }
+        }
+        else 
+        {
+            unset($_SESSION['password']);
+            unset($_SESSION['email']);
+            unset($_SESSION['otp']);
+            $_SESSION['message'] = "OTP is Wrong";
+            $_SESSION['flag'] = 2;
+            header("Location:otp_verify.php");
+            exit(0);
+        }
+    }
+    else 
+    {
+        unset($_SESSION['password']);
+        unset($_SESSION['email']);
+        unset($_SESSION['otp']);
+        $_SESSION['message'] = "All Fields are Mandatory";
+        $_SESSION['flag'] = 2;
+        header("Location:otp_verify.php");
         exit(0);
     }
 }
