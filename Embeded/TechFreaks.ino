@@ -1,6 +1,6 @@
 
 #define DEBUG_SW 1 // Make it 1 to see all debug messages in Serial Monitor
-
+#include <IRremote.h>
 #include <WiFi.h>
 #include <WiFiClient.h>
 #include <FirebaseESP32.h>
@@ -12,6 +12,16 @@
 // WiFi Credentials
 #define WIFI_SSID "iQOO Z3 5G"
 #define WIFI_PASSWORD "hemanth143"
+
+// IR Receiver Pin
+
+int IR_Recv = 5;
+
+int status1 = 0, status2 = 0, status3 = 0, status4 = 0, status5 = 0, status6 = 0, status7 = 0;
+
+// Decoding Results
+IRrecv irrecv(IR_Recv);
+decode_results results;
 
 // Function Declaration
 void with_internet();
@@ -327,8 +337,97 @@ void with_internet()
 void without_internet()
 {
     // FOR SWITCH
-    digitalWrite(R5, !digitalRead(R5));
-    digitalWrite(R6, !digitalRead(R6));
-    digitalWrite(R7, !digitalRead(R7));
-    digitalWrite(R8, !digitalRead(R8));
+    if (irrecv.decode(&results))
+    {
+        long int decCode = results.value;
+        Serial.println(results.value);
+        switch (results.value)
+        {
+        case 216001238254: // Press 1 to Turn on and Off
+            if (status1 == 0)
+            {
+                digitalWrite(R5, HIGH);
+                status1 = 1;
+            }
+            else if (status1 == 1)
+            {
+                digitalWrite(R5, LOW);
+                status1 = 0;
+            }
+            break;
+        case 2160323009694:
+            if (status2 == 0)
+            {
+                digitalWrite(R6, HIGH);
+                status2 = 1;
+            }
+            else if (status2 == 1)
+            {
+                digitalWrite(R6, LOW);
+                status2 = 0;
+            }
+            break;
+        case 216002328054: // Press 2 to Turn on and Off
+            if (status3 == 0)
+            {
+                digitalWrite(R7, HIGH);
+                status3 = 1;
+            }
+            else if (status3 == 1)
+            {
+                digitalWrite(R7, LOW);
+                status3 = 0;
+            }
+            break;
+
+        case 2160023234054: // Press 2 to Turn on and Off
+            if (status4 == 0)
+            {
+                digitalWrite(R8, HIGH);
+                status4 = 1;
+            }
+            else if (status4 == 1)
+            {
+                digitalWrite(R8, LOW);
+                status4 = 0;
+            }
+            break;
+        case 2160342028054: // Press 2 to Turn on and Off
+            if (status5 == 0)
+            {
+                digitalWrite(R9, HIGH);
+                status5 = 1;
+            }
+            else if (status5 == 1)
+            {
+                digitalWrite(R9, LOW);
+                status5 = 0;
+            }
+            break;
+        case 21603420254: // Press 2 to Turn on and Off
+            if (status6 == 0)
+            {
+                digitalWrite(R9, HIGH);
+                status6 = 1;
+            }
+            else if (status6 == 1)
+            {
+                digitalWrite(R9, LOW);
+                status6 = 0;
+            }
+            break;
+        case 2160432028054: // Press 2 to Turn on and Off
+            if (status7 == 0)
+            {
+                digitalWrite(R9, HIGH);
+                status7 = 1;
+            }
+            else if (status7 == 1)
+            {
+                digitalWrite(R9, LOW);
+                status7 = 0;
+            }
+            break;
+        }
+    }
 }
