@@ -20,11 +20,11 @@ function sendemail_otp_verify($name,$email,$verify_token)
 	$mail->SMTPSecure = 'tls';							
 	$mail->Port	 = 587;
 
-	$mail->setFrom('hemanth.techfreaks@gmail.com', $name);		
+	$mail->setFrom('hemanth.techfreaks@gmail.com', 'OTP Verification from TechFreaks');		
 	$mail->addAddress($email);
     $mail->isHTML(true);	
 
-	$mail->Subject = 'Email Verification from TechFreaks';
+	$mail->Subject = 'OTP Verification from TechFreaks';
     $email_template = "<h2>You have Changing the Password TechFreaks</h2>
          <h5>Your OTP IS</h5>
          <br/><br/>
@@ -47,7 +47,7 @@ function sendemail_verify($name,$email,$verify_token)
 	$mail->SMTPSecure = 'tls';							
 	$mail->Port	 = 587;
 
-	$mail->setFrom('hemanth.techfreaks@gmail.com', $name);		
+	$mail->setFrom('hemanth.techfreaks@gmail.com', 'Email Verification from TechFreaks');		
 	$mail->addAddress($email);
     $mail->isHTML(true);	
 
