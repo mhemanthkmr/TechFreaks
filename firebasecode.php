@@ -1,5 +1,6 @@
 <?php
 include('firebasecon.php');
+// print_r($_GET);
 if(isset($_POST['light_off']))
 {
     $light = $_POST['light'];
