@@ -1,12 +1,12 @@
 <?php
 
-include('code/user.Class.php');
+// include('code/user.Class.php');
 
-$user = new User;
+// $user = new User;
 
-$result = $user->userExist('dfghghfgh');
+// $result = $user->userExist('dfghghfgh');
 
-var_dump($result);
+// var_dump($result);
 
-print_r($_SERVER);
+print_r($_SERVER['PATH_INFO']);
 ?>
