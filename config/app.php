@@ -1,7 +1,7 @@
 <?php
 define('DB_HOST', 'localhost');
 define('DB_USER', 'mhemanthkmr');
-define('DB_PASSWORD', 'hemanth123');
+define('DB_PASSWORD', 'Hemanth123$');
 define('DB_DATABASE', 'TechFreaks');
 define('SITE_URL', 'http://localhost/TechFreaks/');
 include_once('database.Class.php');
@@ -17,5 +17,3 @@ function validateInput($dbcon,$input)
 {
     return mysqli_real_escape_string($dbcon, $input);
 }
-
-?>
