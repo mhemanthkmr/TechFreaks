@@ -3,6 +3,15 @@
 #include <WiFi.h>
 #include <WiFiClient.h>
 #include <FirebaseESP32.h>
+#include "DHT.h"
+
+#define DHTPIN 27    // what pin we're connected to
+
+// Uncomment whatever type you're using!
+#define DHTTYPE DHT11   // DHT 11 
+
+// Initialize DHT sensor for normal 16mhz Arduino
+DHT dht(DHTPIN, DHTTYPE);
 
 // Firebase Credentials
 #define FIREBASE_HOST "iot-project-2f20e-default-rtdb.firebaseio.com"
@@ -39,6 +48,7 @@ const long timeoutTime = 2000;
 void with_internet();
 void without_internet();
 void client_server();
+void temperature();
 // Pins of Switches
 #define S5 32
 #define S6 35
@@ -54,6 +64,11 @@ void client_server();
 
 #define FAN 26
 #define ALARM 25
+
+#define RED 13
+#define GREEN 12
+#define BLUE 14
+
 
 // Define FirebaseESP32 data object
 FirebaseData firebaseData;
@@ -79,12 +94,16 @@ void setup()
     pinMode(R9, OUTPUT);
     pinMode(FAN, OUTPUT);
     pinMode(ALARM, OUTPUT);
+    pinMode(RED, OUTPUT);
+    pinMode(BLUE, OUTPUT);
+    pinMode(GREEN, OUTPUT);
+
 
     irrecv.enableIRIn(); // Enable IR Receiver
 
     Serial.begin(115200);
     WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-
+    dht.begin();
     Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
     Firebase.reconnectWiFi(true);
 }
@@ -216,12 +235,12 @@ void loop()
         }
         delay(10);
     }
-
     else
     {
         if (DEBUG_SW)
             Serial.println(" Connected");
         Data_from_firebase();
+        temperature();
         // with_internet();
     }
 }
@@ -505,8 +524,35 @@ void with_internet()
     }
 }
 
+void temperature()
+{
+    float h = dht.readHumidity();
+    float t = dht.readTemperature();
+    float f = dht.readTemperature(true);
+    float heatIndex = dht.computeHeatIndex(f, h);
+    json.set("/humidity", h);
+    json.set("/heatIndex", heatIndex);
+    json.set("/temperature", t);
+    Firebase.updateNode(firebaseData, "/Appliances", json);
+    if(t >= 30) 
+    {
+        digitalWrite(RED,LOW);
+        digitalWrite(GREEN,LOW);
+        digitalWrite(BLUE,HIGH);
+
+    }
+    else
+    {
+        digitalWrite(BLUE,LOW);
+        digitalWrite(RED,HIGH);
+        digitalWrite(GREEN,HIGH);
+
+    }
+}
+
 void without_internet()
 {
+
     if (irrecv.decode(&results))
     {
         long int decCode = results.value;
