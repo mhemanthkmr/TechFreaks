@@ -9,8 +9,7 @@
 	</div>
 
 	<!-- Alerts Modal -->
-	<div class="modal modal-nobg centered fade" id="alertsModal" tabindex="-1" role="dialog" aria-label="Alerts"
-		aria-hidden="true">
+	<div class="modal modal-nobg centered fade" id="alertsModal" tabindex="-1" role="dialog" aria-label="Alerts" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-body">
@@ -38,8 +37,7 @@
 	</div>
 
 	<!-- Arming Modal -->
-	<div class="modal modal-warning centered fade" id="armModal" tabindex="-1" role="dialog" aria-label="Arming"
-		aria-hidden="true">
+	<div class="modal modal-warning centered fade" id="armModal" tabindex="-1" role="dialog" aria-label="Arming" aria-hidden="true">
 		<div class="modal-dialog modal-sm" role="document">
 			<div class="modal-content">
 				<div class="modal-body">
@@ -55,8 +53,7 @@
 	</div>
 
 	<!-- Alarm Modal -->
-	<div class="modal modal-danger centered fade" id="alarmModal" tabindex="-1" role="dialog" aria-label="ALARM"
-		aria-hidden="true" data-backdrop="static">
+	<div class="modal modal-danger centered fade" id="alarmModal" tabindex="-1" role="dialog" aria-label="ALARM" aria-hidden="true" data-backdrop="static">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content" data-dismiss="modal">
 				<div class="modal-body d-flex">
@@ -89,19 +86,16 @@
 							<input id="minifier" type="checkbox">
 						</label>
 						<div class="info-holder info-rb">
-							<div data-toggle="popover-all"
-								data-content="Checkbox element using localStorage to remember the last status."
-								data-original-title="Side menu narrowing" data-placement="right"></div>
+							<div data-toggle="popover-all" data-content="Checkbox element using localStorage to remember the last status." data-original-title="Side menu narrowing" data-placement="right"></div>
 						</div>
 					</div>
 				</form>
 			</div>
-			<a class="navbar-brand px-lg-3 px-1 mr-0" href="index.php#">Tech Freaks</a>
+			<a class="navbar-brand px-lg-3 px-1 mr-0" href="index.php#">Ethic Electronics</a>
 			<div class="ml-auto">
 				<div class="navbar-nav flex-row navbar-icons">
 					<div class="nav-item">
-						<button id="alerts-toggler" class="btn btn-link nav-link" title="Alerts" type="button"
-							data-alerts="3" data-toggle="modal" data-target="#alertsModal">
+						<button id="alerts-toggler" class="btn btn-link nav-link" title="Alerts" type="button" data-alerts="3" data-toggle="modal" data-target="#alertsModal">
 							<svg class="icon-sprite">
 								<use xlink:href="assets/images/icons-sprite.svg#alert" />
 								<svg class="text-danger">
@@ -111,23 +105,22 @@
 						</button>
 					</div>
 					<div id="user-menu" class="nav-item dropdown">
-						<button class="btn btn-link nav-link dropdown-toggle" title="User" type="button"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<button class="btn btn-link nav-link dropdown-toggle" title="User" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<svg class="icon-sprite">
 								<use xlink:href="assets/images/icons-sprite.svg#user" />
 							</svg>
 						</button>
 						<div class="dropdown-menu dropdown-menu-right">
-							<a class="dropdown-item" href="profile.php">Profile</a>
+							<div class="dropdown-item"><?= $_SESSION['auth_user'] ?></div>
+							<a class="dropdown-item" href="profile.php">Hello</a>
 							<div class="dropdown-divider"></div>
 							<form action="code.php" method="post">
-							<button type="submit" name="logout_btn" class="dropdown-item" href="login.php">Logout</button>
-						</form>
+								<button type="submit" name="logout_btn" class="dropdown-item" href="login.php">Logout</button>
+							</form>
 						</div>
 					</div>
 					<div class="nav-item d-lg-none">
-						<button id="sidebar-toggler" type="button" class="btn btn-link nav-link"
-							data-toggle="offcanvas">
+						<button id="sidebar-toggler" type="button" class="btn btn-link nav-link" data-toggle="offcanvas">
 							<svg class="icon-sprite">
 								<use xlink:href="assets/images/icons-sprite.svg#menu" />
 							</svg>
@@ -195,8 +188,7 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="card p-2 mb-4">
-									<img src="assets/images/symbiot4.svg" width="140" height="20" alt="SYMBIOT 4"
-										class="mx-auto">
+									<img src="assets/images/symbiot4.svg" width="140" height="20" alt="SYMBIOT 4" class="mx-auto">
 								</div>
 							</div>
 						</div>
@@ -207,10 +199,8 @@
 									<div class="card-body d-flex flex-wrap">
 										<svg class="icon-sprite icon-2x">
 											<use xlink:href="assets/images/icons-sprite.svg#home" />
-											<use class="subicon-unlocked"
-												xlink:href="assets/images/icons-sprite.svg#subicon-unlocked" />
-											<use class="subicon-locked"
-												xlink:href="assets/images/icons-sprite.svg#subicon-locked" />
+											<use class="subicon-unlocked" xlink:href="assets/images/icons-sprite.svg#subicon-unlocked" />
+											<use class="subicon-locked" xlink:href="assets/images/icons-sprite.svg#subicon-locked" />
 										</svg>
 										<div class="title-status">
 											<h4>Security system</h4>
@@ -229,8 +219,7 @@
 									<div class="card-body">
 										<div class="d-flex flex-wrap mb-2">
 											<svg class="icon-sprite icon-1x">
-												<use class="glow" fill="url(#radial-glow)"
-													xlink:href="assets/images/icons-sprite.svg#glow" />
+												<use class="glow" fill="url(#radial-glow)" xlink:href="assets/images/icons-sprite.svg#glow" />
 												<use xlink:href="assets/images/icons-sprite.svg#garage" />
 											</svg>
 											<div class="title-status">
@@ -238,25 +227,17 @@
 												<p class="status text-danger">Close</p>
 											</div>
 											<div class="ml-auto timer-controls" data-controls="garage-doors-1">
-												<button data-action="open" type="button"
-													class="btn btn-secondary doors-control">Open</button>
-												<button data-action="pause" type="button"
-													class="btn btn-secondary doors-control">Pause</button>
-												<button data-action="resume" type="button"
-													class="btn btn-secondary doors-control">Resume</button>
-												<button data-action="close" type="button"
-													class="btn btn-secondary doors-control">Close</button>
+												<button data-action="open" type="button" class="btn btn-secondary doors-control">Open</button>
+												<button data-action="pause" type="button" class="btn btn-secondary doors-control">Pause</button>
+												<button data-action="resume" type="button" class="btn btn-secondary doors-control">Resume</button>
+												<button data-action="close" type="button" class="btn btn-secondary doors-control">Close</button>
 											</div>
 										</div>
 										<div class="progress">
-											<div class="progress-bar progress-tiny timer" role="progressbar"
-												aria-valuenow="0" aria-valuemin="0" aria-valuemax="12"></div>
+											<div class="progress-bar progress-tiny timer" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="12"></div>
 										</div>
 										<div class="info-holder info-cb">
-											<div data-toggle="popover-all"
-												data-content="Element driven by javascript (countdown timer)."
-												data-original-title="Progress indicator" data-placement="top"
-												data-offset="0,-12"></div>
+											<div data-toggle="popover-all" data-content="Element driven by javascript (countdown timer)." data-original-title="Progress indicator" data-placement="top" data-offset="0,-12"></div>
 										</div>
 									</div>
 								</div>
@@ -273,8 +254,7 @@
 									<ul class="list-group list-group-flush">
 										<li class="list-group-item d-flex active" data-unit="switch-light-1">
 											<svg class="icon-sprite">
-												<use class="glow" fill="url(#radial-glow)"
-													xlink:href="assets/images/icons-sprite.svg#glow" />
+												<use class="glow" fill="url(#radial-glow)" xlink:href="assets/images/icons-sprite.svg#glow" />
 												<use xlink:href="assets/images/icons-sprite.svg#bulb-eco" />
 											</svg>
 											<h5>Kitchen</h5>
@@ -282,16 +262,12 @@
 												<input type="checkbox" id="switch-light-1" checked>
 											</label>
 											<div class="info-holder info-rb" style="right:40px;">
-												<div data-toggle="popover-all"
-													data-content="Checkbox element using localStorage to remember the last status."
-													data-original-title="Switch ON/OFF" data-container="body"
-													data-placement="top" data-offset="0,-6"></div>
+												<div data-toggle="popover-all" data-content="Checkbox element using localStorage to remember the last status." data-original-title="Switch ON/OFF" data-container="body" data-placement="top" data-offset="0,-6"></div>
 											</div>
 										</li>
 										<li class="list-group-item d-flex" data-unit="switch-light-2">
 											<svg class="icon-sprite">
-												<use class="glow" fill="url(#radial-glow)"
-													xlink:href="assets/images/icons-sprite.svg#glow" />
+												<use class="glow" fill="url(#radial-glow)" xlink:href="assets/images/icons-sprite.svg#glow" />
 												<use xlink:href="assets/images/icons-sprite.svg#bulb-eco" />
 											</svg>
 											<h5>Dining room</h5>
@@ -301,8 +277,7 @@
 										</li>
 										<li class="list-group-item d-flex" data-unit="switch-light-3">
 											<svg class="icon-sprite">
-												<use class="glow" fill="url(#radial-glow)"
-													xlink:href="assets/images/icons-sprite.svg#glow" />
+												<use class="glow" fill="url(#radial-glow)" xlink:href="assets/images/icons-sprite.svg#glow" />
 												<use xlink:href="assets/images/icons-sprite.svg#bulb-eco" />
 											</svg>
 											<h5>Living room</h5>
@@ -312,8 +287,7 @@
 										</li>
 										<li class="list-group-item d-flex" data-unit="switch-light-4">
 											<svg class="icon-sprite">
-												<use class="glow" fill="url(#radial-glow)"
-													xlink:href="assets/images/icons-sprite.svg#glow" />
+												<use class="glow" fill="url(#radial-glow)" xlink:href="assets/images/icons-sprite.svg#glow" />
 												<use xlink:href="assets/images/icons-sprite.svg#bulb-eco" />
 											</svg>
 											<h5>Bedroom</h5>
@@ -323,8 +297,7 @@
 										</li>
 										<li class="list-group-item d-flex" data-unit="switch-light-5">
 											<svg class="icon-sprite">
-												<use class="glow" fill="url(#radial-glow)"
-													xlink:href="assets/images/icons-sprite.svg#glow" />
+												<use class="glow" fill="url(#radial-glow)" xlink:href="assets/images/icons-sprite.svg#glow" />
 												<use xlink:href="assets/images/icons-sprite.svg#bulb-eco" />
 											</svg>
 											<h5>Bathroom</h5>
@@ -335,10 +308,8 @@
 									</ul>
 									<div class="card-body">
 										<div class="lights-controls" data-controls="switch-lights">
-											<button data-action="all-on" type="button"
-												class="btn btn-primary lights-control">All <strong>ON</strong></button>
-											<button data-action="all-off" type="button"
-												class="btn btn-secondary lights-control">All
+											<button data-action="all-on" type="button" class="btn btn-primary lights-control">All <strong>ON</strong></button>
+											<button data-action="all-off" type="button" class="btn btn-secondary lights-control">All
 												<strong>OFF</strong></button>
 										</div>
 									</div>
@@ -351,8 +322,7 @@
 								<div class="card" data-unit="switch-light-6">
 									<div class="card-body d-flex flex-row justify-content-start">
 										<svg class="icon-sprite">
-											<use class="glow" fill="url(#radial-glow)"
-												xlink:href="assets/images/icons-sprite.svg#glow" />
+											<use class="glow" fill="url(#radial-glow)" xlink:href="assets/images/icons-sprite.svg#glow" />
 											<use xlink:href="assets/images/icons-sprite.svg#bulb-eco" />
 										</svg>
 										<h5>Front doors</h5>
@@ -364,8 +334,7 @@
 								<div class="card" data-unit="switch-light-7">
 									<div class="card-body d-flex">
 										<svg class="icon-sprite">
-											<use class="glow" fill="url(#radial-glow)"
-												xlink:href="assets/images/icons-sprite.svg#glow" />
+											<use class="glow" fill="url(#radial-glow)" xlink:href="assets/images/icons-sprite.svg#glow" />
 											<use xlink:href="assets/images/icons-sprite.svg#bulb-eco" />
 										</svg>
 										<h5>Back doors</h5>
@@ -377,8 +346,7 @@
 								<div class="card" data-unit="switch-light-8">
 									<div class="card-body d-flex">
 										<svg class="icon-sprite">
-											<use class="glow" fill="url(#radial-glow)"
-												xlink:href="assets/images/icons-sprite.svg#glow" />
+											<use class="glow" fill="url(#radial-glow)" xlink:href="assets/images/icons-sprite.svg#glow" />
 											<use xlink:href="assets/images/icons-sprite.svg#bulb-eco" />
 										</svg>
 										<h5>Pool</h5>
@@ -390,8 +358,7 @@
 								<div class="card" data-unit="switch-light-9">
 									<div class="card-body d-flex">
 										<svg class="icon-sprite">
-											<use class="glow" fill="url(#radial-glow)"
-												xlink:href="assets/images/icons-sprite.svg#glow" />
+											<use class="glow" fill="url(#radial-glow)" xlink:href="assets/images/icons-sprite.svg#glow" />
 											<use xlink:href="assets/images/icons-sprite.svg#bulb-eco" />
 										</svg>
 										<h5>Garage</h5>
@@ -413,8 +380,7 @@
 									<ul class="list-group borderless active" data-unit="wash-machine">
 										<li class="list-group-item d-flex pb-0">
 											<svg class="icon-sprite icon-1x">
-												<use class="glow" fill="url(#radial-glow)"
-													xlink:href="assets/images/icons-sprite.svg#glow" />
+												<use class="glow" fill="url(#radial-glow)" xlink:href="assets/images/icons-sprite.svg#glow" />
 												<use xlink:href="assets/images/icons-sprite.svg#wash-machine" />
 											</svg>
 											<h5>Washing machine</h5>
@@ -431,8 +397,7 @@
 									<ul class="list-group borderless active" data-unit="home-fridge">
 										<li class="list-group-item d-flex pb-0">
 											<svg class="icon-sprite icon-1x">
-												<use class="glow" fill="url(#radial-glow)"
-													xlink:href="assets/images/icons-sprite.svg#glow" />
+												<use class="glow" fill="url(#radial-glow)" xlink:href="assets/images/icons-sprite.svg#glow" />
 												<use xlink:href="assets/images/icons-sprite.svg#home-fridge" />
 											</svg>
 											<h5>Fridge</h5>
@@ -449,8 +414,7 @@
 									<ul class="list-group borderless" data-unit="tv-lcd">
 										<li class="list-group-item d-flex">
 											<svg class="icon-sprite icon-1x">
-												<use class="glow" fill="url(#radial-glow)"
-													xlink:href="assets/images/icons-sprite.svg#glow" />
+												<use class="glow" fill="url(#radial-glow)" xlink:href="assets/images/icons-sprite.svg#glow" />
 												<use xlink:href="assets/images/icons-sprite.svg#tv-lcd" />
 											</svg>
 											<h5>TV</h5>
@@ -489,8 +453,7 @@
 									</div>
 									<div class="card-body d-flex">
 										<svg class="icon-sprite">
-											<use class="glow" fill="url(#radial-glow)"
-												xlink:href="assets/images/icons-sprite.svg#glow" />
+											<use class="glow" fill="url(#radial-glow)" xlink:href="assets/images/icons-sprite.svg#glow" />
 											<use xlink:href="assets/images/icons-sprite.svg#camera" />
 										</svg>
 										<h5>Outdoor front</h5>
@@ -527,8 +490,7 @@
 									</div>
 									<div class="card-body d-flex">
 										<svg class="icon-sprite">
-											<use class="glow" fill="url(#radial-glow)"
-												xlink:href="assets/images/icons-sprite.svg#glow" />
+											<use class="glow" fill="url(#radial-glow)" xlink:href="assets/images/icons-sprite.svg#glow" />
 											<use xlink:href="assets/images/icons-sprite.svg#camera" />
 										</svg>
 										<h5>Joe's room</h5>
@@ -546,8 +508,7 @@
 								<!-- Demonstration - buttons -->
 								<button type="button" class="btn btn-primary my-2">PRIMARY</button>
 								<button type="button" class="btn btn-secondary my-2">SECONDARY</button>
-								<button type="button" class="btn btn-lg btn-danger mx-2 my-2" data-toggle="modal"
-									data-target="#alarmModal"> Demo ALARM </button>
+								<button type="button" class="btn btn-lg btn-danger mx-2 my-2" data-toggle="modal" data-target="#alarmModal"> Demo ALARM </button>
 								<button type="button" class="btn btn-warning my-2">WARNING</button>
 								<button type="button" class="btn btn-success my-2">SUCCESS</button>
 								<button type="button" class="btn btn-info my-2">INFO</button>

@@ -22,7 +22,7 @@ if(isset($_POST['login_btn']))
                     $_SESSION['authenticated'] = TRUE;
                     $_SESSION['auth_user'] = [
                         'id' => $row['id'],
-                        'email' => $row['email'],
+                        'name' => $row['name'],
                         'username' => $row['uername'],
                         'email' => $row['email']
                     ];
@@ -63,5 +63,3 @@ if(isset($_POST['login_btn']))
         exit(0);
     }
 }
-
-?>

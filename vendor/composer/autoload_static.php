@@ -27,6 +27,7 @@ class ComposerStaticInit3565566aadb10efa12b562328029cae9
             'Symfony\\Polyfill\\Php81\\' => 23,
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'SendinBlue\\Client\\' => 18,
             'SendGrid\\Stats\\' => 15,
             'SendGrid\\Mail\\' => 14,
             'SendGrid\\Helper\\' => 16,
@@ -98,6 +99,10 @@ class ComposerStaticInit3565566aadb10efa12b562328029cae9
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'SendinBlue\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sendinblue/api-v3-sdk/lib',
         ),
         'SendGrid\\Stats\\' => 
         array (
