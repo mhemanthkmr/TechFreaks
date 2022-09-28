@@ -49,3 +49,9 @@ while True:
         pass
     finally:
         lcd.clear()
+
+
+# "appliance1": "1",
+# "appliance2": "1",
+# "appliance3": "1",
+# "appliance4": "1",
