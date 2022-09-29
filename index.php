@@ -505,6 +505,29 @@ include('firebasecode.php') ?>
 								</div>
 							</div>
 							<!-- Camera 2  END -->
+							<div class="mapouter">
+								<div class="gmap_canvas"><iframe width="580" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Sri%20sairam%20engineering%20college&t=k&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br>
+									<style>
+										.mapouter {
+											position: absolute;
+											right: 0;
+											text-align: center;
+											height: 500px;
+											width: 580px;
+										}
+
+										/* 
+									</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a> */
+									<style>
+										.gmap_canvas {
+											overflow: hidden;
+											background: none !important;
+											height: 500px;
+											width: 580px;
+										}
+									</style>
+								</div>
+							</div>
 						</div>
 					</div>
 					<br><br>
