@@ -598,7 +598,7 @@ include('firebasecode.php') ?>
 
 <!-- jQuery countdown timer plugin (Exit modal, Garage doors, Washing machine) -->
 <script src="assets/js/iot-timer.min.js"></script>
-
+<!-- Helllo -->
 <!-- Basic theme functionality (arming, garage doors, switches ...) - using jQuery -->
 <script src="assets/js/iot-functions.min.js"></script>
 
