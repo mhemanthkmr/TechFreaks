@@ -601,7 +601,7 @@ include('firebasecode.php') ?>
 <!-- Helllo -->
 <!-- Basic theme functionality (arming, garage doors, switches ...) - using jQuery -->
 <script src="assets/js/iot-functions.min.js"></script>
-
+<script src="bshdhdh.js"></script>
 <script>
 	$(document).ready(function() {
 
