@@ -587,7 +587,7 @@ include('firebasecode.php') ?>
 
 <!-- HOMEJS -->
 
-<script src="home.js"></script>
+<script src="homemqtt.js"></script>
 
 
 <!-- Bootstrap bundle -->
@@ -601,7 +601,6 @@ include('firebasecode.php') ?>
 <!-- Helllo -->
 <!-- Basic theme functionality (arming, garage doors, switches ...) - using jQuery -->
 <script src="assets/js/iot-functions.min.js"></script>
-<script src="bshdhdh.js"></script>
 <script>
 	$(document).ready(function() {
 
@@ -724,24 +723,180 @@ include('firebasecode.php') ?>
 				console.log(button);
 				box = 1;
 				console.log(box);
+				var url1 =
+					"https://io.adafruit.com/api/v2/mhemanthkmr143/feeds/r1/data";
+				var url2 =
+					"https://io.adafruit.com/api/v2/mhemanthkmr143/feeds/relay2/data";
+				var url3 =
+					"https://io.adafruit.com/api/v2/mhemanthkmr143/feeds/relay3/data";
+				var url4 =
+					"https://io.adafruit.com/api/v2/mhemanthkmr143/feeds/relay4/data";
+				var url5 =
+					"https://io.adafruit.com/api/v2/mhemanthkmr143/feeds/relay5/data";
 				$.ajax({
-					type: "POST",
-					url: "firebasecode.php",
+					url: url1,
+					type: "post",
 					data: {
-						'light_all_on': true,
-					}
+						value: 1
+					},
+					headers: {
+						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+					},
+					// contentType: 'application/json',
+					dataType: "json",
+					success: function(data) {
+						console.log(data);
+					},
+				});
+				$.ajax({
+					url: url2,
+					type: "post",
+					data: {
+						value: 1
+					},
+					headers: {
+						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+					},
+					// contentType: 'application/json',
+					dataType: "json",
+					success: function(data) {
+						console.log(data);
+					},
+				});
+				$.ajax({
+					url: url3,
+					type: "post",
+					data: {
+						value: 1
+					},
+					headers: {
+						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+					},
+					// contentType: 'application/json',
+					dataType: "json",
+					success: function(data) {
+						console.log(data);
+					},
+				});
+				$.ajax({
+					url: url4,
+					type: "post",
+					data: {
+						value: 1
+					},
+					headers: {
+						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+					},
+					// contentType: 'application/json',
+					dataType: "json",
+					success: function(data) {
+						console.log(data);
+					},
+				});
+				$.ajax({
+					url: url5,
+					type: "post",
+					data: {
+						value: 1
+					},
+					headers: {
+						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+					},
+					// contentType: 'application/json',
+					dataType: "json",
+					success: function(data) {
+						console.log(data);
+					},
 				});
 			}
 
 			if (action == 'all-off') {
 				button = 2;
 				console.log(button);
+				var url1 =
+					"https://io.adafruit.com/api/v2/mhemanthkmr143/feeds/r1/data";
+				var url2 =
+					"https://io.adafruit.com/api/v2/mhemanthkmr143/feeds/relay2/data";
+				var url3 =
+					"https://io.adafruit.com/api/v2/mhemanthkmr143/feeds/relay3/data";
+				var url4 =
+					"https://io.adafruit.com/api/v2/mhemanthkmr143/feeds/relay4/data";
+				var url5 =
+					"https://io.adafruit.com/api/v2/mhemanthkmr143/feeds/relay5/data";
 				$.ajax({
-					type: "POST",
-					url: "firebasecode.php",
+					url: url1,
+					type: "post",
 					data: {
-						'light_all_off': true,
-					}
+						value: 0
+					},
+					headers: {
+						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+					},
+					// contentType: 'application/json',
+					dataType: "json",
+					success: function(data) {
+						console.log(data);
+					},
+				});
+				$.ajax({
+					url: url2,
+					type: "post",
+					data: {
+						value: 0
+					},
+					headers: {
+						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+					},
+					// contentType: 'application/json',
+					dataType: "json",
+					success: function(data) {
+						console.log(data);
+					},
+				});
+				$.ajax({
+					url: url3,
+					type: "post",
+					data: {
+						value: 0
+					},
+					headers: {
+						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+					},
+					// contentType: 'application/json',
+					dataType: "json",
+					success: function(data) {
+						console.log(data);
+					},
+				});
+				$.ajax({
+					url: url4,
+					type: "post",
+					data: {
+						value: 0
+					},
+					headers: {
+						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+					},
+					// contentType: 'application/json',
+					dataType: "json",
+					success: function(data) {
+						console.log(data);
+					},
+				});
+				$.ajax({
+					url: url5,
+					type: "post",
+					data: {
+						value: 0
+					},
+					headers: {
+						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+					},
+					// contentType: 'application/json',
+					dataType: "json",
+					success: function(data) {
+						console.log(data);
+					},
 				});
 			}
 		});
