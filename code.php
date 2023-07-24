@@ -21,7 +21,7 @@ function sendemail_otp_verify($name, $email, $verify_token)
     $mail->SMTPSecure = 'tls';
     $mail->Port     = 587;
 
-    $mail->setFrom('hemanth.techfreaks@gmail.com', 'OTP Verification from TechFreaks');
+    $mail->setFrom('ethicelectronics@gmail.com', 'OTP Verification from TechFreaks');
     $mail->addAddress($email);
     $mail->isHTML(true);
 
@@ -67,7 +67,7 @@ function sendVerificationMail($verify_token, $name, $email)
 {
     $config_json = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/env.json');
     $config = json_decode($config_json, true);
-    $credentials = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', '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');
+    $credentials = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', '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');
     $apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(new GuzzleHttp\Client(), $credentials);
 
     $sendSmtpEmail = new \SendinBlue\Client\Model\SendSmtpEmail([
@@ -77,7 +77,7 @@ function sendVerificationMail($verify_token, $name, $email)
         'htmlContent' => "<h2>You have Register with the Ethic Electronics</h2>
         <h5>Verify Your email to login with the below given link</h5>
         <br/><br/>
-        <a href='http://192.168.177.20/TechFreaks/verifyemail.php?token=$verify_token'>Click Me</a>",
+        <a href='http://wordpress.selfmade.fun/verifyemail.php?token=$verify_token'>Click Me</a>",
         // 'params' => ['bodyMessage' => $message]
     ]);
 
@@ -98,14 +98,14 @@ if (isset($_POST['register_btn'])) {
         ];
         $password = password_hash($password, PASSWORD_BCRYPT, $options);
         $verify_token = md5(rand());
-        $check_email_query = "SELECT email FROM users WHERE email='$email' LIMIT 1";
+        $check_email_query = "SELECT email FROM auth WHERE email='$email' LIMIT 1";
         $check_email_query_run = mysqli_query($con, $check_email_query);
         if (mysqli_num_rows($check_email_query_run) > 0) {
             $_SESSION['flag'] = 2;
             $_SESSION['message'] = "Email Exists Please Login";
             header("Location: login.php");
         } else {
-            $check_username_query = "SELECT username FROM users WHERE username='$username' LIMIT 1";
+            $check_username_query = "SELECT username FROM auth WHERE username='$username' LIMIT 1";
             $check_username_query_run = mysqli_query($con, $check_username_query);
             if (mysqli_num_rows($check_username_query_run) > 0) {
                 $_SESSION['flag'] = 2;
@@ -113,8 +113,8 @@ if (isset($_POST['register_btn'])) {
                 header("Location: login.php");
             } else {
                 // sendemail_verify($name, $email, $verify_token);
-                sendVerificationMail($verify_token, $name, $email);
-                $query = "INSERT INTO `TechFreaks`.`users` (`name`, `username`, `email`, `password`, `ver_token`) VALUES ('$name', '$username', '$email', '$password', '$verify_token');";
+                // sendVerificationMail($verify_token, $name, $email);
+                $query = "INSERT INTO `mhemanthkmr_api`.`auth` (`name`, `username`, `email`, `password`, `token`, `active`) VALUES ('$name', '$username', '$email', '$password', '$verify_token',0);";
                 // die($query);
                 $query_run = mysqli_query($con, $query);
                 if ($query_run) {
@@ -145,7 +145,7 @@ if (isset($_POST['profile_save_bio'])) {
         // die($email);
         $phone = $_POST['phone'];
 
-        $update_profile = "UPDATE `TechFreaks`.`users` SET `name` = '$name', `email` = '$email', `phone` = '+91$phone' WHERE (`id` = '$id');";
+        $update_profile = "UPDATE `auth` SET `name` = '$name', `email` = '$email', `phone` = '+91$phone' WHERE (`id` = '$id');";
         // die(print_r($update_profile));
         $update_profile_run = mysqli_query($con, $update_profile);
         // die($update_profile_run);
@@ -185,7 +185,7 @@ if (isset($_POST['profile_save_password'])) {
                         'cost' => 9,
                     ];
                     $hashed_password = password_hash($password, PASSWORD_BCRYPT, $options);
-                    $query = "UPDATE `TechFreaks`.`users` SET `password` = '$hashed_password' WHERE (`id` = '$id');";
+                    $query = "UPDATE `mhemanthkmr_wordpress`.`users` SET `password` = '$hashed_password' WHERE (`id` = '$id');";
                     $update_profile_run = mysqli_query($con, $query);
                     if ($update_profile_run) {
                         $_SESSION['flag'] = 1;
@@ -275,7 +275,7 @@ if (isset($_POST['verify_otp'])) {
             $password = $_SESSION['password'];
             $email = $_SESSION['email'];
             // die("$password.$email");
-            $query = "UPDATE `TechFreaks`.`users` SET `password` = '$password' WHERE (`email` = '$email');";
+            $query = "UPDATE `mhemanthkmr_wordpress`.`users` SET `password` = '$password' WHERE (`email` = '$email');";
             $update_profile_run = mysqli_query($con, $query);
             if ($update_profile_run) {
                 $_SESSION['flag'] = 1;

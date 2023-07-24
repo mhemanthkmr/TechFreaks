@@ -12,9 +12,9 @@ $(document).ready(function () {
       $.ajax({
         url: url,
         type: "post",
-        data: { value: 0 },
-        headers: { "X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX" },
-        // contentType: 'application/json',
+        data: { value: 10 },
+        headers: { "X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn" },
+        // contentType: "application/json",
         dataType: "json",
         success: function (data) {
           console.log(data);
@@ -25,9 +25,9 @@ $(document).ready(function () {
       $.ajax({
         url: url,
         type: "post",
-        data: { value: 1 },
-        headers: { "X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX" },
-        // contentType: 'application/json',
+        data: { value: 11 },
+        headers: { "X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn" },
+        // contentType: "application/json",
         dataType: "json",
         success: function (data) {
           console.log(data);
@@ -47,8 +47,8 @@ $(document).ready(function () {
       $.ajax({
         url: url,
         type: "post",
-        data: { value: 0 },
-        headers: { "X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX" },
+        data: { value: 20 },
+        headers: { "X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn" },
         // contentType: 'application/json',
         dataType: "json",
         success: function (data) {
@@ -61,8 +61,8 @@ $(document).ready(function () {
       $.ajax({
         url: url,
         type: "post",
-        data: { value: 1 },
-        headers: { "X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX" },
+        data: { value: 21 },
+        headers: { "X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn" },
         // contentType: 'application/json',
         dataType: "json",
         success: function (data) {
@@ -83,8 +83,8 @@ $(document).ready(function () {
       $.ajax({
         url: url,
         type: "post",
-        data: { value: 0 },
-        headers: { "X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX" },
+        data: { value: 30 },
+        headers: { "X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn" },
         // contentType: 'application/json',
         dataType: "json",
         success: function (data) {
@@ -97,8 +97,8 @@ $(document).ready(function () {
       $.ajax({
         url: url,
         type: "post",
-        data: { value: 1 },
-        headers: { "X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX" },
+        data: { value: 31 },
+        headers: { "X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn" },
         // contentType: 'application/json',
         dataType: "json",
         success: function (data) {
@@ -119,8 +119,8 @@ $(document).ready(function () {
       $.ajax({
         url: url,
         type: "post",
-        data: { value: 0 },
-        headers: { "X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX" },
+        data: { value: 41 },
+        headers: { "X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn" },
         // contentType: 'application/json',
         dataType: "json",
         success: function (data) {
@@ -133,8 +133,8 @@ $(document).ready(function () {
       $.ajax({
         url: url,
         type: "post",
-        data: { value: 1 },
-        headers: { "X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX" },
+        data: { value: 40 },
+        headers: { "X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn" },
         // contentType: 'application/json',
         dataType: "json",
         success: function (data) {
@@ -155,8 +155,8 @@ $(document).ready(function () {
       $.ajax({
         url: url,
         type: "post",
-        data: { value: 0 },
-        headers: { "X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX" },
+        data: { value: 51 },
+        headers: { "X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn" },
         // contentType: 'application/json',
         dataType: "json",
         success: function (data) {
@@ -169,8 +169,8 @@ $(document).ready(function () {
       $.ajax({
         url: url,
         type: "post",
-        data: { value: 1 },
-        headers: { "X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX" },
+        data: { value: 50 },
+        headers: { "X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn" },
         // contentType: 'application/json',
         dataType: "json",
         success: function (data) {
@@ -247,7 +247,7 @@ $(document).ready(function () {
         url: url,
         type: "post",
         data: { value: 0 },
-        headers: { "X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX" },
+        headers: { "X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn" },
         // contentType: 'application/json',
         dataType: "json",
         success: function (data) {

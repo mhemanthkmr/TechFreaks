@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '8c9d480000266a89daca2d9924be76095fd0df3d',
+        'reference' => 'dc17fc7647453701ef7f44523c0d124d8d46e308',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '8c9d480000266a89daca2d9924be76095fd0df3d',
+            'reference' => 'dc17fc7647453701ef7f44523c0d124d8d46e308',
             'dev_requirement' => false,
         ),
         'beste/clock' => array(

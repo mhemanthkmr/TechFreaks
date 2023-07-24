@@ -12,7 +12,6 @@ include('firebasecode.php') ?>
 		</div>
 	</div>
 </div>
-
 <!-- Alerts Modal -->
 <!-- <div class="modal modal-nobg centered fade" id="alertsModal" tabindex="-1" role="dialog" aria-label="Alerts"
 	aria-hidden="true">
@@ -410,7 +409,7 @@ include('firebasecode.php') ?>
 									</li>
 									<li class="list-group-item d-flex pt-0 pb-4">
 										<p class="entry">Temperature</p>
-										<p class="ml-auto mb-0"><?= $fetchdata['temperature'] ?><sup>°F</sup></p>
+										<p class="ml-auto mb-0"><?= $fetchdata['temperature'] ?><sup>°C</sup></p>
 									</li>
 								</ul>
 								<!-- Fridge  END -->
@@ -505,29 +504,6 @@ include('firebasecode.php') ?>
 								</div>
 							</div>
 							<!-- Camera 2  END -->
-							<div class="mapouter">
-								<div class="gmap_canvas"><iframe width="580" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Sri%20sairam%20engineering%20college&t=k&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br>
-									<style>
-										.mapouter {
-											position: absolute;
-											right: 0;
-											text-align: center;
-											height: 500px;
-											width: 580px;
-										}
-
-										/* 
-									</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a> */
-									<style>
-										.gmap_canvas {
-											overflow: hidden;
-											background: none !important;
-											height: 500px;
-											width: 580px;
-										}
-									</style>
-								</div>
-							</div>
 						</div>
 					</div>
 					<br><br>
@@ -737,10 +713,10 @@ include('firebasecode.php') ?>
 					url: url1,
 					type: "post",
 					data: {
-						value: 1
+						value: 11
 					},
 					headers: {
-						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+						"X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn"
 					},
 					// contentType: 'application/json',
 					dataType: "json",
@@ -752,10 +728,10 @@ include('firebasecode.php') ?>
 					url: url2,
 					type: "post",
 					data: {
-						value: 1
+						value: 21
 					},
 					headers: {
-						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+						"X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn"
 					},
 					// contentType: 'application/json',
 					dataType: "json",
@@ -767,10 +743,10 @@ include('firebasecode.php') ?>
 					url: url3,
 					type: "post",
 					data: {
-						value: 1
+						value: 31
 					},
 					headers: {
-						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+						"X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn"
 					},
 					// contentType: 'application/json',
 					dataType: "json",
@@ -782,10 +758,10 @@ include('firebasecode.php') ?>
 					url: url4,
 					type: "post",
 					data: {
-						value: 1
+						value: 40
 					},
 					headers: {
-						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+						"X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn"
 					},
 					// contentType: 'application/json',
 					dataType: "json",
@@ -797,10 +773,10 @@ include('firebasecode.php') ?>
 					url: url5,
 					type: "post",
 					data: {
-						value: 1
+						value: 50
 					},
 					headers: {
-						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+						"X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn"
 					},
 					// contentType: 'application/json',
 					dataType: "json",
@@ -827,10 +803,10 @@ include('firebasecode.php') ?>
 					url: url1,
 					type: "post",
 					data: {
-						value: 0
+						value: 10
 					},
 					headers: {
-						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+						"X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn"
 					},
 					// contentType: 'application/json',
 					dataType: "json",
@@ -842,10 +818,10 @@ include('firebasecode.php') ?>
 					url: url2,
 					type: "post",
 					data: {
-						value: 0
+						value: 20
 					},
 					headers: {
-						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+						"X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn"
 					},
 					// contentType: 'application/json',
 					dataType: "json",
@@ -857,10 +833,10 @@ include('firebasecode.php') ?>
 					url: url3,
 					type: "post",
 					data: {
-						value: 0
+						value: 30
 					},
 					headers: {
-						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+						"X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn"
 					},
 					// contentType: 'application/json',
 					dataType: "json",
@@ -872,10 +848,10 @@ include('firebasecode.php') ?>
 					url: url4,
 					type: "post",
 					data: {
-						value: 0
+						value: 41
 					},
 					headers: {
-						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+						"X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn"
 					},
 					// contentType: 'application/json',
 					dataType: "json",
@@ -887,10 +863,10 @@ include('firebasecode.php') ?>
 					url: url5,
 					type: "post",
 					data: {
-						value: 0
+						value: 51
 					},
 					headers: {
-						"X-AIO-Key": "aio_RXxM62BYFcLuQorYtU44MIsx1ZgX"
+						"X-AIO-Key": "aio_NDVr79btXbvAJEp3JS9xACWWcgGn"
 					},
 					// contentType: 'application/json',
 					dataType: "json",

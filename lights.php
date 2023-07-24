@@ -80,7 +80,7 @@ include('includes/header.php');
         </div>
       </form>
     </div>
-    <a class="navbar-brand px-lg-3 px-1 mr-0" href="lights.php#">Tech Freaks</a>
+    <a class="navbar-brand px-lg-3 px-1 mr-0" href="lights.php#">Ethic Electronics</a>
     <div class="ml-auto">
       <div class="navbar-nav flex-row navbar-icons">
         <div class="nav-item">

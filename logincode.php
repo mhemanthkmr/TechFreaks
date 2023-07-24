@@ -8,7 +8,7 @@ if(isset($_POST['login_btn']))
         $username = mysqli_real_escape_string($con,$_POST['username']);
         $password = mysqli_real_escape_string($con,$_POST['password']);
 
-        $login_query = "SELECT * FROM users WHERE username = '$username'LIMIT 1";
+        $login_query = "SELECT * FROM auth WHERE username = '$username'LIMIT 1";
         $login_query_run = mysqli_query($con,$login_query);
 
         if(mysqli_num_rows($login_query_run) == 1)
@@ -17,7 +17,7 @@ if(isset($_POST['login_btn']))
             // echo $row['verify_status'];
             if (password_verify($password, $row['password']))
             {
-                if($row['status'] == 1)
+                if($row['active'] == 1)
                 {
                     $_SESSION['authenticated'] = TRUE;
                     $_SESSION['auth_user'] = [

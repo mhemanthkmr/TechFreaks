@@ -4,15 +4,15 @@ session_start();
 
 if(isset($_GET['token'])){
     $token = $_GET['token'];
-    $verify_query = "SELECT ver_token,status FROM users WHERE ver_token='$token' LIMIT 1";
+    $verify_query = "SELECT token,active FROM auth WHERE token='$token' LIMIT 1";
     $verify_query_run = mysqli_query($con,$verify_query);
 
     if(mysqli_num_rows($verify_query_run) > 0){
         $row = mysqli_fetch_array($verify_query_run);
         //echo $row['verify_token'];
-        if($row['verify_status'] == 0){
-            $clicked_token = $row['ver_token'];
-            $update_query = "UPDATE users SET status = '1' WHERE ver_token='$clicked_token' LIMIT 1";
+        if($row['active'] == 0){
+            $clicked_token = $row['token'];
+            $update_query = "UPDATE auth SET active = '1' WHERE token='$clicked_token' LIMIT 1";
             $update_query_run = mysqli_query($con,$update_query);
             if($update_query_run)
             {

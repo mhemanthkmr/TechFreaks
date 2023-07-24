@@ -1,8 +1,8 @@
 <?php
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'mysql.selfmade.ninja');
 define('DB_USER', 'mhemanthkmr');
-define('DB_PASSWORD', 'Hemanth123$');
-define('DB_DATABASE', 'TechFreaks');
+define('DB_PASSWORD', 'hemanth123');
+define('DB_DATABASE', 'mhemanthkmr_api');
 define('SITE_URL', 'http://localhost/EthicElectronics/');
 include_once('database.Class.php');
 $db = new DatabaseConnection;

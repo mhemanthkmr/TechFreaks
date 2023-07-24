@@ -3,18 +3,17 @@ include('auth.php');
 $title = "Profile";
 include('includes/header.php');
 include('config/app.php');
-
 ?>
 
   <!-- Preloader -->
-  <div id="iot-preloader">
+  <!-- <div id="iot-preloader">
     <div class="center-preloader d-flex align-items-center">
       <div class="spinners">
         <div class="spinner01"></div>
         <div class="spinner02"></div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Alerts Modal -->
   <div class="modal modal-nobg centered fade" id="alertsModal" tabindex="-1" role="dialog" aria-label="Alerts"
@@ -87,7 +86,7 @@ include('config/app.php');
           </div>
         </form>
       </div>
-      <a class="navbar-brand px-lg-3 px-1 mr-0" href="profile.php">Tech Freaks</a>
+      <a class="navbar-brand px-lg-3 px-1 mr-0" href="profile.php">EthicElectronics</a>
       <div class="ml-auto">
         <div class="navbar-nav flex-row navbar-icons">
           <div class="nav-item">
@@ -213,7 +212,7 @@ include('config/app.php');
                     if(isset($_SESSION['auth_user']['id'])) 
                     {
                       $user_id = $_SESSION['auth_user']['id'];
-                      $users = "SELECT * FROM `users` WHERE id='$user_id'";
+                      $users = "SELECT * FROM `auth` WHERE id='$user_id'";
                       // die($users);
                       $users_run = mysqli_query($con,$users);
                       if(mysqli_num_rows($users_run) > 0)
