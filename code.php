@@ -9,33 +9,33 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 
 require 'vendor/autoload.php';
-function sendemail_otp_verify($name, $email, $verify_token)
-{
-    $mail = new PHPMailer();
-    //$mail->SMTPDebug = 2;									
-    $mail->isSMTP();
-    $mail->Host     = 'smtp.gmail.com;';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'hemanth.techfreaks@gmail.com';
-    $mail->Password = 'Hemanth123$';
-    $mail->SMTPSecure = 'tls';
-    $mail->Port     = 587;
+// function sendemail_otp_verify($name, $email, $verify_token)
+// {
+//     $mail = new PHPMailer();
+//     //$mail->SMTPDebug = 2;									
+//     $mail->isSMTP();
+//     $mail->Host     = 'smtp.gmail.com;';
+//     $mail->SMTPAuth = true;
+//     $mail->Username = 'hemanth.techfreaks@gmail.com';
+//     $mail->Password = 'Hemanth123$';
+//     $mail->SMTPSecure = 'tls';
+//     $mail->Port     = 587;
 
-    $mail->setFrom('ethicelectronics@gmail.com', 'OTP Verification from TechFreaks');
-    $mail->addAddress($email);
-    $mail->isHTML(true);
+//     $mail->setFrom('ethicelectronics@gmail.com', 'OTP Verification from TechFreaks');
+//     $mail->addAddress($email);
+//     $mail->isHTML(true);
 
-    $mail->Subject = 'OTP Verification from TechFreaks';
-    $email_template = "<h2>You have Changing the Password TechFreaks</h2>
-         <h5>Your OTP IS</h5>
-         <br/><br/>
-         <h1>$verify_token</h1>
-         ";
-    $mail->Body = $email_template;
-    //$mail->AltBody = 'Body in plain text for non-HTML mail clients';
-    $mail->send();
-    //echo "Mail has been sent successfully!";
-}
+//     $mail->Subject = 'OTP Verification from TechFreaks';
+//     $email_template = "<h2>You have Changing the Password TechFreaks</h2>
+//          <h5>Your OTP IS</h5>
+//          <br/><br/>
+//          <h1>$verify_token</h1>
+//          ";
+//     $mail->Body = $email_template;
+//     //$mail->AltBody = 'Body in plain text for non-HTML mail clients';
+//     $mail->send();
+//     //echo "Mail has been sent successfully!";
+// }
 function sendemail_verify($name, $email, $verify_token)
 {
     $mail = new PHPMailer();
